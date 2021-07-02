@@ -15,21 +15,6 @@ body{
       transition: .2s;
   }
 
-
-@keyframes fadein{
-	0%{
-        opacity: 0;
-	}
-
-	100%{
-        opacity: 1;
-	}
-}
-
-.delay05{
-    animation-delay: .5s;
-}
-
 /* 0-bs */
 /* ------------------------------- */
 .container, .row, .col-5{
@@ -47,17 +32,10 @@ section{
 .title{
     color:var(--wh);
     font-size: 3rem;
-    /* background-color: green; */
     height:fit-content;
     text-align: center;
     width:100%;
     white-space: nowrap;
-    opacity:0;
-    animation-name: fadein;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    /* animation-delay: 0s; */
 }
 
 .line{
@@ -89,25 +67,6 @@ left:50vw;
 transform: translateX(-50%);
 }
 
-.zero .start{
-animation-name: start;
-animation-duration: .75s;
-animation-timing-function: linear;
-animation-fill-mode: forwards;
-animation-delay: 1s;
-}
-@keyframes start{
-	0%{
-        opacity: 0;
-		transform: translateY(300px);
-	}
-
-	100%{
-        opacity: 1;
-		transform: translateY(150px);
-	}
-}
-
 /* one */
 /* ------------------------------- */
 .one{
@@ -124,24 +83,83 @@ animation-delay: 1s;
     text-align: center;
 }
 /* ------------------------------- */
-/* type 1:height */
-.cards>div{
-    max-width:400px;
-background-color: rgba(255, 255, 255, 0.55);
-height: 30vh;
-margin: 10px;
-border-radius: 10px;
+.cards_wrap{
+    width:90vw;
+    max-width:950px;
+    height:60vh;
+    overflow: hidden;
+    /* background-color: red; */
+    /* cursor: */
 }
-.cards>div:hover{
+
+
+.cards{
+    white-space: nowrap;
+    width:450vw;
+    max-width:4750px;
+    height:60vh;
+    /* transform: translateX(-90vw); */
+    /* background-color: green; */
+}
+@media (min-width: 1057px) {
+    .cards{
+    /* transform: translateX(-950px) */
+}
+}
+
+
+.options{
+    width:90vw;
+    max-width:950px;
+    height:60vh;
+    /* background-color: yellow; */
+}
+
+
+/* type 1:height */
+.option{
+    height: 27.5vh;
+    min-width:130px;
+    max-width:400px;
+width:42.5%;
+background-color: rgba(255, 255, 255, 0.55);
+margin: 7.5px;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.option img{
+max-height:100px;
+}
+@media (min-width: 1057px) {
+    .option img{
+        max-height:120px;
+        }
+}
+
+.option:hover{
     background-color: rgba(255, 255, 255, 1);
 }
 
-/* type 2:width */
-.cards>.width{
-    max-width:820px;
-height: 14vh;
-}
 
+/* type 2:width */
+.option_width{
+width:90%;
+max-width:800px;
+height: 12.5vh;
+}
+.option_width img{
+    max-height:50px;
+    }
+@media (min-width: 1057px) {
+    .option_width img{
+        max-height:70px;
+        }
+    }
+
+.cards .selected{
+    background-color: rgba(255, 255, 255, 1);
+}
 /* ------------------------------- */
 .one .arrows{
     width:100%;
@@ -151,6 +169,7 @@ height: 14vh;
 .one .arrow{
     color:var(--wh);
     font-size: 1.5rem;
+    cursor: pointer;
     
 }
 

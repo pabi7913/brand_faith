@@ -1,0 +1,53 @@
+.fadein{
+    opacity:0;
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    /* animation-delay: 0s; */
+}
+
+@keyframes fadein{
+	0%{
+        opacity: 0;
+	}
+
+	100%{
+        opacity: 1;
+	}
+}
+/* ------------------------------------ */
+.fadeup{
+    opacity:0;
+    animation-name: fadeup;
+    animation-duration: .75s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    }
+    @keyframes fadeup{
+        0%{
+            opacity: 0;
+            transform: translateY(300px);
+        }
+    
+        100%{
+            opacity: 1;
+            transform: translateY(150px);
+        }
+    }
+/* ------------------------------------ */
+
+
+.delay05{
+    animation-delay: .5s;
+}
+.delay075{
+    animation-delay: .75s;
+}
+.delay10{
+    animation-delay: 1s;
+}
+.delay15{
+    animation-delay: 1.5s;
+}
+/* ------------------------------------ */
