@@ -196,6 +196,9 @@ height: 12.5vh;
 .one .arrow:hover{
     color:var(--bl);
 }
+.one .arrow:nth-of-type(3):hover{
+    color:var(--or);
+}
 /* ------------------------------- */
 .one .pages{
     width:100%;
@@ -270,29 +273,29 @@ height: 12.5vh;
 }
 /* ------------------------------- */
 .circle_process{
-	width: 250px;
-	height : 250px;
+	width: 300px;
+	height : 300px;
 }
 
 /* right */
 /* -------------------- */
 .circle_process .right_part{
     top:0;
-	width: 125px;
-	height: 250px;
+	width: 150px;
+	height: 300px;
     /* ----------------------- */
     right:0;
 
 }
 .circle_process .right_circle{
-    width: 250px;
-	height: 250px;
-	border:20px solid rgba(50, 124, 215, 0.2);
+    width: 300px;
+	height: 300px;
+	border:15px solid rgba(50, 124, 215, 0.2);
 	border-radius: 50%;
 	transform : rotate(-135deg);
     /* ----------------------- */
-	border-top:20px solid rgb(225, 150, 65);
-	border-right:20px solid rgb(225, 150, 65);
+	border-top:15px solid rgb(225, 150, 65);
+	border-right:15px solid rgb(225, 150, 65);
 	right:0;
     animation-name:right_circle;
     /* ----------------------- */
@@ -339,21 +342,21 @@ height: 12.5vh;
 /* -------------------- */
 .circle_process .left_part{
     top:0;
-	width: 125px;
-	height: 250px;
+	width: 150px;
+	height: 300px;
     /* ----------------------- */
     left:0;
 
 }
 .circle_process .left_circle{
-    width: 250px;
-	height: 250px;
-	border:20px solid rgba(50, 124, 215, 0.2);
+    width: 300px;
+	height: 300px;
+	border:15px solid rgba(50, 124, 215, 0.2);
 	border-radius: 50%;
 	transform : rotate(-135deg);
     /* ----------------------- */
-	border-bottom:20px solid rgb(225, 150, 65);
-	border-left:20px solid rgb(225, 150, 65);
+	border-bottom:15px solid rgb(225, 150, 65);
+	border-left:15px solid rgb(225, 150, 65);
 	left:0;
 	animation-name:left_circle;
     /* ----------------------- */
@@ -408,7 +411,7 @@ font-size: 1.25rem;
 /* ------------------------------- */
 .two .button{
     transform: translateY(0);
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 /* ------------------------------- */
 .two .answer{

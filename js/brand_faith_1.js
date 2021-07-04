@@ -1,11 +1,108 @@
 // 1
 // --------------------------------------------------
+let score = 0
+// console.log('score', score)
+let sum = 0
+sum1 = 0
+sum2 = 0
+sum3 = 0
+sum4 = 0
+sum5 = 0
+
+
 // 設定:點選選項
+// --------------------------------------------------
 $('.option').click(function () {
     // 結果:點選變白色，其餘透白色
     $(this).addClass('selected').siblings().removeClass('selected')
+    // 設定:計算有幾個選項被選取
+    selected = $('.selected').length;
+    // console.log('selected', selected)
+
+    // 計算selected,集滿5題更改complete連結
+    // ---------------------
+    if (selected != 5) {
+        $('.complete').removeAttr('onclick')
+    } else {
+        $('.complete').attr("onclick", "location.href='brand_faith_2.html'")
+    }
+    score = $(this).data('score')
+    // console.log('score', score)
 })
+
+// 設定:計分加總
 // --------------------------------------------------
+$('.options').eq(0).children().click(function () {
+    $(this).attr('id', 'selected_1').siblings().removeAttr('id')
+    console.log('score', score)
+    sum1 = $('#selected_1').data('score')
+    console.log('sum1', sum1)
+})
+$('.options').eq(1).children().click(function () {
+    $(this).attr('id', 'selected_2').siblings().removeAttr('id')
+    console.log('score', score)
+    sum2 = $('#selected_2').data('score')
+    console.log('sum2', sum2)
+})
+$('.options').eq(2).children().click(function () {
+    $(this).attr('id', 'selected_3').siblings().removeAttr('id')
+    console.log('score', score)
+    sum3 = $('#selected_3').data('score')
+    console.log('sum3', sum3)
+})
+$('.options').eq(3).children().click(function () {
+    $(this).attr('id', 'selected_4').siblings().removeAttr('id')
+    console.log('score', score)
+    sum4 = $('#selected_4').data('score')
+    console.log('sum4', sum4)
+})
+$('.options').eq(4).children().click(function () {
+    $(this).attr('id', 'selected_5').siblings().removeAttr('id')
+    console.log('score', score)
+    sum5 = $('#selected_5').data('score')
+    console.log('sum5', sum5)
+})
+
+// complete按鈕觸發popup
+// --------------------------------------------------
+$('.complete').click(function () {
+    selected = $('.selected').length;
+    sum = sum1 + sum2 + sum3 + sum4 + sum5
+    console.log('sum', sum)
+    if (selected != 5) {
+        // $('.complete').removeAttr('onclick')
+        $('.popup').removeClass('d-none')
+    } else {
+        // $('.complete').attr("onclick", "location.href='brand_faith_2.html'")
+        $('.popup').addClass('d-none')
+    }
+    // 改網址
+    // --------------------------------------------------
+    if (sum > 0) {
+        $('.complete').attr("onclick", "location.href='brand_faith_2.html#20'")
+        if (sum > 1) {
+            $('.complete').attr("onclick", "location.href='brand_faith_2.html#40'")
+            if (sum > 2) {
+                $('.complete').attr("onclick", "location.href='brand_faith_2.html#60'")
+                if (sum > 3) {
+                    $('.complete').attr("onclick", "location.href='brand_faith_2.html#80'")
+                    if (sum > 4) {
+                        $('.complete').attr("onclick", "location.href='brand_faith_2.html#100'")
+                    }
+                }
+            }
+        }
+    }
+})
+
+
+// 設定:popup按'了解'關閉popup
+// --------------------------------------------------
+$(".button:contains('了解')").click(function () {
+    $('.popup').addClass('d-none')
+})
+
+
 
 // '上1題'和'下1題'的選項
 // --------------------------------------------------
@@ -43,8 +140,10 @@ $('.arrow').eq(0).click(function () {
     // ----------
     // 條件2:回到第4頁和之前時
     if (t <= 3) {
-        // 結果2-1:complete改回白色,next
-        $(this).next().css('color', 'var(--wh)').find('div').text('next')
+        // 結果2-1-1:next出現
+        $(this).next().removeClass('d-none').addClass('d-flex')
+        // 結果2-1-2:complete消失
+        $(this).next().next().removeClass('d-flex').addClass('d-none')
         // 結果2-2:第4頁標題改成uber
         $('.title').find('div').text('uber')
         // 結果2-3:頁碼=按鈕移動次數+1(例如第1頁t=0,t+1=1)
@@ -71,6 +170,10 @@ $('.arrow').eq(0).click(function () {
     // !!!此行必須放在最下面，否則會讀不到條件1 if(t < 1) {t = 0}，造成t=-1錯誤
     // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
     $('.cards').css('transform', 'translateX' + '(' + t * -90 + 'vw)')
+    if (t < 1) {
+        // 結果1-1:顯示第1區塊，移動0
+        t = 0;
+    }
 })
 
 // 設定:prev-rwd
@@ -107,6 +210,7 @@ else {
 // 設定:調整螢幕大小時
 $(window).resize(function () {
     // !!!為了解決resize的時候t的寬度會不固定,決定resize時，直接回到第1題
+    // ---------------------
     // 預設:t=0
     t = 0;
     // 結果:回到第1題的位置
@@ -115,9 +219,13 @@ $(window).resize(function () {
     if (t < 1) {
         // 結果0-1:顯示第1區塊，移動0
         t = 0;
-        // 結果0-2:prev消失,complete改回白色,next
+        // 結果0-2-1:prev消失
         $('.arrow').eq(0).fadeOut(400).addClass('invisible')
-        .next().css('color', 'var(--wh)').find('div').text('next');
+        // 結果0-2-2:next出現
+        $('.arrow').eq(0).next().removeClass('d-none').addClass('d-flex')
+        // 結果0-2-3:complete消失
+        $('.arrow').eq(0).next().next().removeClass('d-flex').addClass('d-none')
+
         // 結果0-3:頁碼為1
         $('.page').text('1')
     }
@@ -158,6 +266,8 @@ $('.arrow').eq(1).click(function () {
     t = t + 1;
     // console.log('t', t)
 
+
+
     // ----------
     // 條件1:位於第1頁以上時
     if (t > 0) {
@@ -183,6 +293,7 @@ $('.arrow').eq(1).click(function () {
                         $('.title').find('div').text('apple')
                         // 結果5-2:頁碼為5
                         $('.page').text('5')
+                        // 
                     }
                 }
             }
@@ -194,12 +305,22 @@ $('.arrow').eq(1).click(function () {
     if (t > 3) {
         // 結果6-1:顯示第5區塊，移動tx4
         t = 4;
-        // 結果6-2:next文字改為complete
-        $(this).css('color', 'var(--or)').find('div').text('complete')
+        // 結果6-2-1:next消失
+        $(this).removeClass('d-flex').addClass('d-none')
+        // 結果6-2-2:complete出現
+        $(this).next().removeClass('d-none').addClass('d-flex')
     }
+
     // ----------
     // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
     $('.cards').css('transform', 'translateX' + '(' + t * -90 + 'vw)')
+    if (t > 3) {
+        // 結果6-1:顯示第5區塊，移動tx4
+        t = 4;
+    }
+    if (t != 5) {
+        $('.popup').addClass('d-none')
+    }
 })
 
 // 設定:next-rwd
@@ -235,22 +356,6 @@ else {
 // 2.
 // 設定:調整螢幕大小時
 $(window).resize(function () {
-    // !!!為了解決resize的時候t的寬度會不固定,決定resize時，直接回到第1題
-    // 預設:t=0
-    t = 0;
-    // 結果:回到第1題的位置
-    $('.cards').css('transform', 'translateX' + '(' + t + ')')
-    // 條件0:回到第1頁時
-    if (t < 1) {
-        // 結果0-1:顯示第1區塊，移動0
-        t = 0;
-        // 結果0-2:prev消失,complete改回白色,next
-        $('.arrow').eq(0).fadeOut(400).addClass('invisible')
-        .next().css('color', 'var(--wh)').find('div').text('next');
-        // 結果0-3:頁碼為1
-        $('.page').text('1')
-    }
-    // ---------------------
     // 條件1:視窗尺寸>=601
     if ($(window).width() >= 601) {
         // 結果1:設定:next點選'到下1題'
@@ -278,6 +383,14 @@ $(window).resize(function () {
         })
     }
 })
+
+
+
+
+
+
+
+
 
 
 
