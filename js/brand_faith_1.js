@@ -71,10 +71,10 @@ $('.complete').click(function () {
     console.log('sum', sum)
     if (selected != 5) {
         // $('.complete').removeAttr('onclick')
-        $('.popup').removeClass('d-none')
+        $('.popup_wrap').removeClass('d-none')
     } else {
         // $('.complete').attr("onclick", "location.href='brand_faith_2.html'")
-        $('.popup').addClass('d-none')
+        $('.popup_wrap').addClass('d-none')
     }
     // 改網址
     // --------------------------------------------------
@@ -99,7 +99,7 @@ $('.complete').click(function () {
 // 設定:popup按'了解'關閉popup
 // --------------------------------------------------
 $(".button:contains('了解')").click(function () {
-    $('.popup').addClass('d-none')
+    $('.popup_wrap').addClass('d-none')
 })
 
 
@@ -319,7 +319,7 @@ $('.arrow').eq(1).click(function () {
         t = 4;
     }
     if (t != 5) {
-        $('.popup').addClass('d-none')
+        $('.popup_wrap').addClass('d-none')
     }
 })
 
