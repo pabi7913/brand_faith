@@ -24,7 +24,7 @@ $('.option').click(function () {
     if (selected != 5) {
         $('.complete').removeAttr('onclick')
     } else {
-        $('.complete').attr("onclick", "location.href='brand_faith_2.html'")
+        $('.complete').attr("onclick", "location='brand_faith_2.html'")
     }
     score = $(this).data('score')
     // console.log('score', score)
