@@ -79,15 +79,15 @@ $('.complete').click(function () {
     // 改網址
     // --------------------------------------------------
     if (sum > 0) {
-        $('.complete').attr("onclick", "location.href='brand_faith_2.html#20'")
+        $('.complete').attr("onclick", "location='brand_faith_2.html#20'")
         if (sum > 1) {
-            $('.complete').attr("onclick", "location.href='brand_faith_2.html#40'")
+            $('.complete').attr("onclick", "location='brand_faith_2.html#40'")
             if (sum > 2) {
-                $('.complete').attr("onclick", "location.href='brand_faith_2.html#60'")
+                $('.complete').attr("onclick", "location='brand_faith_2.html#60'")
                 if (sum > 3) {
-                    $('.complete').attr("onclick", "location.href='brand_faith_2.html#80'")
+                    $('.complete').attr("onclick", "location='brand_faith_2.html#80'")
                     if (sum > 4) {
-                        $('.complete').attr("onclick", "location.href='brand_faith_2.html#100'")
+                        $('.complete').attr("onclick", "location='brand_faith_2.html#100'")
                     }
                 }
             }
