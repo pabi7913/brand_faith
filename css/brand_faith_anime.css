@@ -49,6 +49,44 @@
     animation-delay: 1.5s;
 }
 /* ------------------------------------ */
+/* 無限重複 */
+.infinite {
+    animation-iteration-count: infinite;
+}
+/* ------------------------------------ */
+    /* 持續時間 */
+    
+    .time-7s {
+        animation-duration: 7s;
+    }
+    
+    .time-3s {
+        animation-duration: 3s;
+    }
+    
+    .time-2s {
+        animation-duration: 2s;
+    }
+    
+    .time-075s {
+        animation-duration: .75s;
+    }
+    
+    .time-05s {
+        animation-duration: .5s;
+    }
+    
+    .time-03s {
+        animation-duration: .3s;
+    }
+    
+    .time-025s {
+        animation-duration: .25s;
+    }
+/* ------------------------------------ */
+
+
+
 @keyframes right_circle_100{
 	0%{
 		transform: rotate(-135deg);

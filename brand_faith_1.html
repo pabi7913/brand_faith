@@ -44,39 +44,26 @@
             <!-- 1.0 -->
             <!-- 1.1 -->
             <div class='one position-absolute'>
-                <!-- 1.1.0 -->
-                <!-- <div class="popup_wrap w-100 h-100 bg-dark">
-                    <div class="popup position-fixed col d-none">
-                        <div class="content mx-auto text-center">
-                            <i class="fas fa-exclamation-circle"></i>
-                            <br>
-                            尚未<br>答題完成
-                        </div>
-                        <div class='button px-4 py-1 mx-auto'>
-                            了解
-                        </div>
-                    </div>
-                </div> -->
                 <!-- 1.1.1 -->
                 <div class='title fadein mb-4'>
                     <div class='mx-3'>Chrome</div>
                     <div class='line w-50 mx-auto'></div>
                 </div>
                 <!-- ----------------------------------------------- -->
-                <div class="cards_wrap m-auto fadein delay05">
+                <div class="cards_wrap m-auto">
                     <div class="cards row flex-nowrap mx-auto">
                         <!-- 1.1.2.1-h chrome-1-->
                         <div class="options row justify-content-center align-items-center">
-                            <div class="option d-flex" data-score='1'>
+                            <div class="option d-flex animate__animated animate__flipInY delay05" data-score='1'>
                                 <img class='d-block m-auto' src="img/chrome-1.png" alt="">
                             </div>
-                            <div class="option d-flex" data-score='0'>
+                            <div class="option d-flex animate__animated animate__flipInY delay05" data-score='0'>
                                 <img class='d-block m-auto' src="img/chrome-2.png" alt="">
                             </div>
-                            <div class="option d-flex" data-score='0'>
+                            <div class="option d-flex animate__animated animate__flipInY delay05" data-score='0'>
                                 <img class='d-block m-auto' src="img/chrome-3.png" alt="">
                             </div>
-                            <div class="option d-flex" data-score='0'>
+                            <div class="option d-flex animate__animated animate__flipInY delay05" data-score='0'>
                                 <img class='d-block m-auto' src="img/chrome-4.png" alt="">
                             </div>
                         </div>
@@ -162,15 +149,17 @@
                 </div>
                 <!-- 1.1.4 -->
                 <div class="pages fadein delay15 row justify-content-center align-items-center mt-3">
-                    <div class="page mr-3 pl-2"></div>
+                    <div class="page mr-3 pl-2">
+                        <!-- 用js寫數頁數 -->
+                    </div>
                     <div class="total">/5</div>
 
                 </div>
                 <!-- 1.1.0 -->
-                <div class="popup_wrap position-fixed d-none">
-                    <div class="popup position-fixed col">
-                        <div class="content mx-auto text-center">
-                            <i class="fas fa-exclamation-circle"></i>
+                <div class="popup_wrap animate__animated animate__bounceIn position-fixed d-none">
+                    <div class="popup position-fixed row align-items-center">
+                        <div class="content mx-auto text-center col-12">
+                            <i class="fas fa-exclamation-circle mb-3 animate__animated animate__rubberBand time-075s infinite"></i>
                             <br>
                             尚未<br>答題完成
                         </div>

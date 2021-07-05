@@ -122,9 +122,23 @@ let t = 0;
 // 設定:prev點選'回上1題'
 // -------------------------
 $('.arrow').eq(0).click(function () {
+    // animate__animated animate__flipInY delay05
     // 預設:t=每按1次減少1頁
     t = t - 1;
     // console.log('t', t)
+
+    // 設定:選項翻牌動畫
+    // -------------------------
+    $('.options').eq(t).children().addClass('animate__animated').addClass('animate__flipInY')
+        .parent().next().children().removeClass('animate__animated').removeClass('animate__flipInY')
+
+    // 設定:頁碼換頁動畫
+    // -------------------------
+    $('.page').addClass('animate__animated').addClass('animate__bounceIn').addClass('time-05')
+    setTimeout(function () {
+        $('.page').removeClass('animate__animated').removeClass('animate__bounceIn').removeClass('time-05')
+    }, 500)
+
 
     // ----------
     // !!! if(t < 1) {t = 0}這個順序放在最前面，避免錯誤
@@ -266,6 +280,21 @@ $('.arrow').eq(1).click(function () {
     t = t + 1;
     // console.log('t', t)
 
+    // 設定:title
+    // -------------------------
+    // $('.title').removeClass('fadein').addClass('animate__animated').addClass('animate__flipInX')
+
+    // 設定:選項翻牌動畫
+    // -------------------------
+    $('.options').eq(t).children().addClass('animate__animated').addClass('animate__flipInY')
+        .parent().prev().children().removeClass('animate__animated').removeClass('animate__flipInY').removeClass('delay05')
+
+    // 設定:頁碼換頁動畫
+    // -------------------------
+    $('.page').addClass('animate__animated').addClass('animate__bounceIn').addClass('time-05')
+    setTimeout(function () {
+        $('.page').removeClass('animate__animated').removeClass('animate__bounceIn').removeClass('time-05')
+    }, 500)
 
 
     // ----------
