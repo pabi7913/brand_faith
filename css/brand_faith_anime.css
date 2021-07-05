@@ -19,7 +19,7 @@
 .fadeup{
     opacity:0;
     animation-name: fadeup;
-    animation-duration: .75s;
+    animation-duration: .5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     }
@@ -60,7 +60,7 @@
     background-color: var(--wh); */
 
     animation-name: line;
-    animation-duration: 2s;
+    animation-duration:1.5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 
