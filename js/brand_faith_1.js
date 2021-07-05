@@ -13,8 +13,12 @@ sum5 = 0
 // 設定:點選選項
 // --------------------------------------------------
 $('.option').click(function () {
-    // 結果:點選變白色，其餘透白色
-    $(this).addClass('selected').siblings().removeClass('selected')
+    // 結果:點選變白色,圖變大,其餘透白色,圖復原
+    $(this).addClass('selected')
+    .children().addClass('biger').addClass('time-025s')
+    .parent().siblings().removeClass('selected')
+    .children().removeClass('biger').removeClass('time-025s')
+    
     // 設定:計算有幾個選項被選取
     selected = $('.selected').length;
     // console.log('selected', selected)
@@ -119,6 +123,7 @@ $('.page').text('1')
 let t = 0;
 
 
+
 // 設定:prev點選'回上1題'
 // -------------------------
 $('.arrow').eq(0).click(function () {
@@ -126,6 +131,14 @@ $('.arrow').eq(0).click(function () {
     // 預設:t=每按1次減少1頁
     t = t - 1;
     // console.log('t', t)
+
+    // 設定:title上下翻牌動畫
+    // -------------------------
+    $('.title').removeClass('fadein')
+    .children().eq(0).addClass('animate__animated').addClass('animate__flipInX')
+    setTimeout(function () {
+        $('.title').children().eq(0).removeClass('animate__animated').removeClass('animate__flipInX')
+    }, 500)
 
     // 設定:選項翻牌動畫
     // -------------------------
@@ -280,9 +293,13 @@ $('.arrow').eq(1).click(function () {
     t = t + 1;
     // console.log('t', t)
 
-    // 設定:title
+    // 設定:title上下翻牌動畫
     // -------------------------
-    // $('.title').removeClass('fadein').addClass('animate__animated').addClass('animate__flipInX')
+    $('.title').removeClass('fadein')
+    .children().eq(0).addClass('animate__animated').addClass('animate__flipInX')
+    setTimeout(function () {
+        $('.title').children().eq(0).removeClass('animate__animated').removeClass('animate__flipInX')
+    }, 500)
 
     // 設定:選項翻牌動畫
     // -------------------------

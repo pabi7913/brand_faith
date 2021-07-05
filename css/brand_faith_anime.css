@@ -6,7 +6,6 @@
     animation-fill-mode: forwards;
     /* animation-delay: 0s; */
 }
-
 @keyframes fadein{
 	0%{
         opacity: 0;
@@ -33,6 +32,47 @@
         100%{
             opacity: 1;
             transform: translateY(150px);
+        }
+    }
+/* ------------------------------------ */  
+.biger{
+    animation-name: biger;
+    /* animation-duration: .25s; */
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    }
+    @keyframes biger{
+        0%{ 
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(1.2);
+        }
+    }
+/* ------------------------------------ */
+
+
+.line{
+    /* height:2px; */
+    /* max-width:1000px; */
+    /* max-width:0px;
+    margin:auto;
+    background-color: var(--wh); */
+
+    animation-name: line;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+
+    }
+
+    @keyframes line{
+        0%{ 
+            max-width:0px;
+        }
+
+        100%{
+            max-width:1000px;
         }
     }
 /* ------------------------------------ */

@@ -40,7 +40,8 @@ section{
 
 .line{
     height:2px;
-    max-width:1000px;
+    /* max-width:1000px; */
+    max-width:0px;
     margin:auto;
     background-color: var(--wh);
      -webkit-mask-image: linear-gradient(270deg, transparent 0%, rgba(0, 0, 0, 1.0)100%);
@@ -145,7 +146,9 @@ cursor: pointer;
 
 .option img{
 max-height:100px;
+transition: .2s;
 }
+
 @media (min-width: 1057px) {
     .option img{
         max-height:120px;
@@ -166,6 +169,7 @@ height: 12.5vh;
 .option_width img{
     max-height:50px;
     }
+
 @media (min-width: 1057px) {
     .option_width img{
         max-height:70px;
