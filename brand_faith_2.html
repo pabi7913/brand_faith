@@ -14,10 +14,9 @@
     <!-- Animate -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- google font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- FOA -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
@@ -61,11 +60,11 @@
                         <div class="left_circle position-absolute"></div>
                     </div>
                     <!-- content -->
-                    <div class="circle_content text-center position-absolute">
-                        <div class="number animate__animated animate__bounceIn delay10">
+                    <div class="circle_content text-center position-absolute row align-items-center">
+                        <div class="number animate__animated animate__bounceIn delay10 mx-auto">
                             <!-- 用js寫入%數 -->
                         </div>
-                        <div class="content animate__animated animate__bounceIn delay15">
+                        <div class="content animate__animated animate__flipInX delay15 mx-auto">
                             <!-- 用js寫入評語 -->
                         </div>
                     </div>
@@ -75,25 +74,15 @@
                     再試一次
                 </div>
                 <!-- 1.2.4 -->
-                <div class='animate__animated animate__fadeInUp delay15 answer mx-auto mt-3'>
+                <div class='answer animate__animated animate__fadeInUp delay15 mx-auto mt-3'>
                     看解答
                 </div>
                 <!-- 1.2.5 -->
-                <div class='cards d-none'>
-                    <div class='height m-auto d-flex position-fixed'>
+                <div class='cards position-fixed row d-none'>
+                    <!-- 用js換形狀 -->
+                    <div class='option m-auto row animate__animated animate__bounceInUp'>
+                        <!-- 用js寫入圖片 -->
                         <img class='d-block m-auto' src="img/chrome-1.png" alt="">
-                    </div>
-                    <div class='width m-auto d-flex position-fixed'>
-                        <img class='d-block m-auto' src="img/amazon-1.png" alt="">
-                    </div>
-                    <div class='height m-auto d-flex position-fixed'>
-                        <img class='d-block m-auto' src="img/instagram-1.png" alt="">
-                    </div>
-                    <div class='width m-auto d-flex position-fixed'>
-                        <img class='d-block m-auto' src="img/uber-1.png" alt="">
-                    </div>
-                    <div class='height m-auto d-flex position-fixed'>
-                        <img class='d-block m-auto ' src="img/apple-1.png" alt="">
                     </div>
                 </div>
             </div>

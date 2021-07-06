@@ -50,8 +50,6 @@
         }
     }
 /* ------------------------------------ */
-
-
 .line{
     /* height:2px; */
     /* max-width:1000px; */
@@ -65,7 +63,6 @@
     animation-fill-mode: forwards;
 
     }
-
     @keyframes line{
         0%{ 
             max-width:0px;
@@ -75,6 +72,93 @@
             max-width:1000px;
         }
     }
+/* ------------------------------------ */
+.light{
+    animation-name: light;
+    animation-duration:.25s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    filter: drop-shadow(0 0 0rem var(--re));
+}
+@keyframes light{
+    0%{ 
+        filter: drop-shadow(0 0 0rem var(--re));
+    }
+
+    100%{
+        filter: drop-shadow(0 0 0.75rem var(--re));
+    }
+}
+
+.circle_process_100:before{
+    position: absolute;
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+    content: '';
+    z-index: 2;
+    border-radius: 50%;
+    animation-name: circle_process_100;
+    animation-duration:.25s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes circle_process_100{
+	0%{
+	}
+	50%{
+    background: linear-gradient(210deg,var(--re) 30%,var(--or) 75% );
+
+    }
+    
+    100%{
+    background: linear-gradient(210deg,var(--re) 30%,var(--or) 75% );
+
+	}
+}
+/* ------------------------------------ */
+.width{
+    animation-name: width;
+    animation-duration:.5s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes width{
+    0%{ 
+    }
+
+    100%{
+    width:30vw;
+    height:15vh;
+    min-width: 300px;
+    max-width: 450px;
+    }
+}
+/* ------------------------------------ */
+.height{
+    animation-name: height;
+    animation-duration:.5s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+@keyframes height{
+    0%{ 
+    width:30vw;
+    height:15vh;
+    min-width: 300px;
+    max-width: 450px;
+    }
+
+    100%{
+    width:45vw;
+    height:35vh;
+    min-width: 200px;
+    max-width: 250px;
+    }
+}
 /* ------------------------------------ */
 .delay05{
     animation-delay: .5s;
@@ -474,3 +558,4 @@
 		transform: rotate(-135deg);
 	}
 }
+

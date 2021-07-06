@@ -140,6 +140,13 @@ $('.arrow').eq(0).click(function () {
         $('.title').children().eq(0).removeClass('animate__animated').removeClass('animate__flipInX')
     }, 500)
 
+    // 設定:line的動畫
+    // -------------------------
+    $('.line').css('animation-name','stop')
+    setTimeout(function () {
+        $('.line').css('animation-name','line')
+    }, 1)
+
     // 設定:選項翻牌動畫
     // -------------------------
     $('.options').eq(t).children().addClass('animate__animated').addClass('animate__flipInY')
@@ -300,6 +307,13 @@ $('.arrow').eq(1).click(function () {
     setTimeout(function () {
         $('.title').children().eq(0).removeClass('animate__animated').removeClass('animate__flipInX')
     }, 500)
+
+    // 設定:line的動畫
+    // -------------------------
+    $('.line').css('animation-name','stop')
+    setTimeout(function () {
+        $('.line').css('animation-name','line')
+    }, 1)
 
     // 設定:選項翻牌動畫
     // -------------------------
