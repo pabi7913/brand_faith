@@ -11,9 +11,10 @@ $('.number').html(score + '<span>%</span>')
 // 設定:顯示文字
 // --------------------------------------------------
 // 設定:當100％時,最前面+1
-$(".number:contains('00')").html('100<span>%</span>').css('color', 'var(--or)')
+$(".number:contains('00')").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing',' -.3rem')
     .next().text('品牌達人!').css('color', 'var(--or)')
-    .parent().prev().children().css('animation-name', 'left_circle_100')
+    .parent().css('padding','75px 35px')
+    .prev().children().css('animation-name', 'left_circle_100')
     .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
     .parent().parent().addClass('light').addClass('circle_process_100')
 
