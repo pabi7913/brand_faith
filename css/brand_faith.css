@@ -1,7 +1,7 @@
 /* 0 */
 /* ------------------------------- */
 body{
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root {
@@ -384,6 +384,7 @@ height: 12.5vh;
 font-size: 7rem;
 font-weight:200;
 line-height:4rem;
+letter-spacing: -.25rem;
 }
 /* % */
 .circle_content .number span{

@@ -42,81 +42,58 @@ $(".number:contains('ml')").html('0<span>%</span>')
 // --------------------------------------------------
 let click = -1;
 
-
 $('.answer').click(function () {
     $(this).next().removeClass('d-none')
-        // .children().addClass('animate__flipInY')
 
     click = click + 1
     console.log('click', click)
 
     if (click > 0) {
-        $(this).next().children()
-            .removeClass('animate__flipInY')
-            .addClass('animate__flipOutY')
+        $('.answer_card').addClass('animate__flipOutY')
         setTimeout(function () {
-            $('.answer_card').addClass('answer_card_width')
-        }, 1)
-        setTimeout(function () {
-            $('.answer_card').removeClass('animate__flipOutY')
-                .addClass('animate__flipInY')
+            $('.answer_card')
+                .addClass('answer_card_width')
+                .removeClass('animate__flipOutY').addClass('animate__flipInY')
             $('.answer_card img').attr('src', 'img/amazon-2.png')
-        }, 2)
+        }, 400)
         if (click > 1) {
-            $(this).next().children()
-                .removeClass('animate__flipInY')
-                .addClass('animate__flipOutY')
+            $('.answer_card').addClass('animate__flipOutY')
             setTimeout(function () {
-                $('.answer_card').removeClass('answer_card_width')
-            }, 1)
-            setTimeout(function () {
-                $('.answer_card').removeClass('animate__flipOutY')
-                    .addClass('animate__flipInY')
+                $('.answer_card')
+                    .removeClass('answer_card_width')
+                    .removeClass('animate__flipOutY').addClass('animate__flipInY')
                 $('.answer_card img').attr('src', 'img/instagram-3.png')
-            }, 2)
+            }, 400)
             if (click > 2) {
-                $(this).next().children()
-                    .removeClass('animate__flipInY')
-                    .addClass('animate__flipOutY')
+                $('.answer_card').addClass('animate__flipOutY')
                 setTimeout(function () {
-                    $('.answer_card').addClass('answer_card_width')
-                }, 1)
-                setTimeout(function () {
-                    $('.answer_card').removeClass('animate__flipOutY')
-                        .addClass('animate__flipInY')
+                    $('.answer_card')
+                        .addClass('answer_card_width')
+                        .removeClass('animate__flipOutY').addClass('animate__flipInY')
                     $('.answer_card img').attr('src', 'img/uber-4.png')
-                }, 2)
+                }, 400)
                 if (click > 3) {
-                    $(this).next().children()
-                        .removeClass('animate__flipInY')
-                        .addClass('animate__flipOutY')
+                    $('.answer_card').addClass('animate__flipOutY')
                     setTimeout(function () {
-                        $('.answer_card').removeClass('answer_card_width')
-                    }, 1)
-                    setTimeout(function () {
-                        $('.answer_card').removeClass('animate__flipOutY')
-                            .addClass('animate__flipInY')
+                        $('.answer_card')
+                            .removeClass('answer_card_width')
+                            .removeClass('animate__flipOutY').addClass('animate__flipInY')
                         $('.answer_card img').attr('src', 'img/apple-1.png')
-                    }, 2)
-                    if (click > 4) {
-                        // click = -1
-                        $(this).next().children()
-                            .addClass('animate__flipOutY')
-                            .removeClass('animate__flipInY')
-
-                        setTimeout(function () {
-                            $('.answers').addClass('d-none')
-                        }, 751)
-                        setTimeout(function () {
-                            $('.answers').addClass('d-none')
-                            // $('.answer_card').removeClass('animate__flipOutY')
-                            //     .addClass('animate__flipInY')
-                            // $('.answer_card img').attr('src', 'img/chrome-1.png')
-                        }, 752)
-                    }
+                    }, 400)
+                }
+                if (click > 4) {
+                    click = -1
+                    $('.answer_card').addClass('animate__flipOutY')
+                    setTimeout(function () {
+                        $('.answers').addClass('d-none')
+                        $('.answer_card')
+                            .removeClass('animate__flipOutY').addClass('animate__flipInY')
+                        $('.answer_card img').attr('src', 'img/chrome-1.png')
+                    }, 400)
                 }
             }
         }
+
     }
 
 })
