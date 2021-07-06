@@ -118,7 +118,6 @@ transform: translateX(-50%);
 }
 }
 
-
 .options{
     width:90vw;
     max-width:950px;
@@ -404,34 +403,37 @@ font-size: 1.5rem;
     color:var(--wh);
     width:fit-content;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 .two .answer:hover{
     color:var(--or);
 }
 /* ------------------------------- */
-.two .cards{
+.two .answers{
     z-index:999;
     pointer-events: none;
     width: 100%;
     height: 100%;
     top: 0;
-    transition:.1s
+    /* transition:.2s */
 }
 
 
 
-.two .cards .option{
+.two .answers .answer_card{
     width:45vw;
     height:35vh;
     min-width: 200px;
     max-width: 250px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    transition:.2s;
 }
-/* .two .cards .option_width{
+
+.two .answers .answer_card_width{
     width:30vw;
     height:15vh;
     min-width: 300px;
     max-width: 450px;
-} */
+
+
+}
