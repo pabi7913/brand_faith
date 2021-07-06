@@ -12,7 +12,7 @@ $('.number').html(score + '<span>%</span>')
 // --------------------------------------------------
 // 設定:當100％時,最前面+1
 $(".number:contains('00')").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing',' -.3rem')
-    .next().text('品牌達人!').css('color', 'var(--or)')
+    .next().text('品牌達人 !').css('color', 'var(--or)')
     .parent().css('padding','75px 35px')
     .prev().children().css('animation-name', 'left_circle_100')
     .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
@@ -20,46 +20,57 @@ $(".number:contains('00')").html('100<span>%</span>').css('color', 'var(--or)').
 
 // 設定:當80％時
 $(".number:contains('80')")
-    .next().text('還差一點！')
+    .next().text('還差一點 !')
     .parent().prev().children().css('animation-name', 'left_circle_80')
     .parent().prev().children().css('animation-name', 'right_circle_80').addClass('right_circle_g')
 // 設定:當60％時
-$(".number:contains('60')").next().text('剛好及格！')
+$(".number:contains('60')").next().text('剛好及格 !')
     .parent().prev().children().css('animation-name', 'left_circle_60')
     .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
 // 設定:當40％時
-$(".number:contains('40')").next().text('眼花了嗎！')
+$(".number:contains('40')").next().text('眼花了嗎 !')
     .parent().prev().children().css('animation-name', 'left_circle_40')
     .parent().prev().children().css('animation-name', 'right_circle_40').addClass('right_circle_g')
 // 設定:當20％時
-$(".number:contains('20')").next().text('藍瘦香菇！')
+$(".number:contains('20')").next().text('藍瘦香菇 !')
     .parent().prev().children().css('animation-name', 'left_circle_20')
     .parent().prev().children().css('animation-name', 'right_circle_20').addClass('right_circle_g')
 // 設定:當0％時,最前面
 $(".number:contains('ml')").html('0<span>%</span>')
-    .next().text('加油好嗎！')
+    .next().text('加油好嗎 !')
+
+    $('.answer').mouseenter(function () {
+        $(this).text('這樣好嗎？')
+    }).mouseleave(function () {
+        $(this).text('偷看答案')})
 
 // 設定:看解答
 // --------------------------------------------------
 let click = -1;
 
 $('.answer').click(function () {
+    
     $(this).next().removeClass('d-none')
+    setTimeout(function () {
+        // $('.answer').text('google')
+    }, 400)
 
     click = click + 1
     console.log('click', click)
-
     if (click > 0) {
         $('.answer_card').addClass('animate__flipOutY')
         setTimeout(function () {
+            // $('.answer').text('amazon')
             $('.answer_card')
                 .addClass('answer_card_width')
                 .removeClass('animate__flipOutY').addClass('animate__flipInY')
             $('.answer_card img').attr('src', 'img/amazon-2.png')
         }, 400)
         if (click > 1) {
+            
             $('.answer_card').addClass('animate__flipOutY')
             setTimeout(function () {
+                // $('.answer').text('instagram')
                 $('.answer_card')
                     .removeClass('answer_card_width')
                     .removeClass('animate__flipOutY').addClass('animate__flipInY')
@@ -68,6 +79,7 @@ $('.answer').click(function () {
             if (click > 2) {
                 $('.answer_card').addClass('animate__flipOutY')
                 setTimeout(function () {
+                    // $('.answer').text('uber')
                     $('.answer_card')
                         .addClass('answer_card_width')
                         .removeClass('animate__flipOutY').addClass('animate__flipInY')
@@ -76,6 +88,7 @@ $('.answer').click(function () {
                 if (click > 3) {
                     $('.answer_card').addClass('animate__flipOutY')
                     setTimeout(function () {
+                        // $('.answer').text('apple')
                         $('.answer_card')
                             .removeClass('answer_card_width')
                             .removeClass('animate__flipOutY').addClass('animate__flipInY')
@@ -86,6 +99,7 @@ $('.answer').click(function () {
                     click = -1
                     $('.answer_card').addClass('animate__flipOutY')
                     setTimeout(function () {
+                        // $('.answer').text('偷看答案')
                         $('.answers').addClass('d-none')
                         $('.answer_card')
                             .removeClass('animate__flipOutY').addClass('animate__flipInY')
@@ -93,8 +107,6 @@ $('.answer').click(function () {
                     }, 400)
                 }
             }
-        }
-
     }
-
+    }
 })

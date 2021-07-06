@@ -1,7 +1,7 @@
 /* 0 */
 /* ------------------------------- */
 body{
-    font-family: 'Roboto','Baloo 2','Noto Sans TC',sans-serif;}
+    font-family: 'Roboto','Baloo 2','Kiwi Maru',sans-serif;}
 
 
 :root {
@@ -32,7 +32,7 @@ section{
 .title{
     color:var(--wh);
     font-size: 3rem;
-    font-weight: 500;
+    font-weight:100;
     height:fit-content;
     text-align: center;
     width:100%;
@@ -51,6 +51,7 @@ section{
 .button{
     color:var(--wh);
     font-size: 2rem;
+    font-weight: 500;
     background-color: var(--bl);
     border:1px solid var(--bl);
     border-radius: 50px;
@@ -66,8 +67,10 @@ section{
 .zero{
 top:35vh;
 left:50vw;
+width:50%;
 transform: translateX(-50%);
 }
+
 
 /* one */
 /* ------------------------------- */
@@ -81,7 +84,9 @@ transform: translateX(-50%);
 .one .title{
     color:var(--wh);
     width:100%;
+    font-family: 'Baloo 2';
     font-size: 2.5rem;
+    font-weight: 600;
     text-align: center;
 }
 /* ------------------------------- */
@@ -192,9 +197,10 @@ height: 12.5vh;
 
 .one .arrow{
     color:var(--wh);
+    font-family: 'Baloo 2';
     font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: .1rem;
+    font-weight: 800;
+    letter-spacing: .05rem;
     cursor: pointer;
     
 }
@@ -209,9 +215,11 @@ height: 12.5vh;
 .one .pages{
     width:100%;
     color:var(--wh);
+    font-family: 'Baloo 2';
     font-size: 1.5rem;
+    font-weight: 800;
     letter-spacing: 10px;
-    font-weight:700;
+    font-weight:600;
 }
 
 .one .page{
@@ -221,6 +229,7 @@ height: 12.5vh;
     height:35px;
     line-height: 35px;
     font-size: 1.75rem;
+    font-weight: 800;
     text-align: center; 
 }
 /* ------------------------------- */
@@ -248,14 +257,17 @@ height: 12.5vh;
 .one .popup .content{
     color: var(--re);
     width:fit-content;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
 }
 .one .popup .content i{
     font-size: 4rem;
 }
 
 .one .popup .button{
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    letter-spacing: .1rem;
     color:var(--wh);
     background-color: var(--re);
     border:1px solid var(--re);
@@ -394,7 +406,7 @@ font-size: 2rem;
 }
 /* 評語 */
 .circle_content .content{
-font-size: 1.5rem;
+font-size: 2rem;
 }
 /* ------------------------------- */
 .two .button{
