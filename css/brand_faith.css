@@ -53,6 +53,7 @@ section{
     color:var(--wh);
     font-size: 2rem;
     font-weight: 500;
+    white-space: nowrap;
     background-color: var(--bl);
     border:1px solid var(--bl);
     border-radius: 50px;
@@ -289,15 +290,20 @@ height: 12.5vh;
 /* ------------------------------- */
 .two{
     width:100%;
-    top:10vh;
+    top:50vh;
     left:50vw;
-    transform: translateX(-50%);
+    transform: translateX(-50%)translateY(-50%);
 }
 
 .two .title{
     font-size: 2.5rem;
     width:80%;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
+}
+@media (min-width: 1057px) {
+    .two .title{
+        margin-bottom: 10vh;
+    }
 }
 /* ------------------------------- */
 .circle_process{
@@ -418,7 +424,12 @@ font-size: 2rem;
 /* ------------------------------- */
 .two .button{
     transform: translateY(0);
-    margin-top: 10vh;
+    margin-top: 5vh;
+}
+@media (min-width: 1057px) {
+    .two .title{
+        margin-bottom: 10vh;
+    }
 }
 /* ------------------------------- */
 .two .answer{
