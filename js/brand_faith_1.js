@@ -28,6 +28,7 @@ $('.option').click(function () {
     if (selected != 5) {
         $('.complete').removeAttr('onclick')
     } else {
+        localStorage.setItem('sum','0')
         $('.complete').attr("onclick", "location='brand_faith_2.html'")
     }
     score = $(this).data('score')
@@ -83,20 +84,25 @@ $('.complete').click(function () {
     // 改網址
     // --------------------------------------------------
     if (sum > 0) {
-        $('.complete').attr("onclick", "location='brand_faith_2.html#20'")
+        localStorage.setItem('total_score','20')
+
         if (sum > 1) {
-            $('.complete').attr("onclick", "location='brand_faith_2.html#40'")
+            localStorage.setItem('total_score','40')
+
             if (sum > 2) {
-                $('.complete').attr("onclick", "location='brand_faith_2.html#60'")
+                localStorage.setItem('total_score','60')
+
                 if (sum > 3) {
-                    $('.complete').attr("onclick", "location='brand_faith_2.html#80'")
+                    localStorage.setItem('total_score','80')
+
                     if (sum > 4) {
-                        $('.complete').attr("onclick", "location='brand_faith_2.html#100'")
+                        localStorage.setItem('total_score','100')
                     }
                 }
             }
         }
     }
+    
 })
 
 

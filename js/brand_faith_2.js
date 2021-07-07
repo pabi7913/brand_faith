@@ -1,89 +1,97 @@
-// 尋找網址
+// 取出上頁分數sum
 // --------------------------------------------------
-let url = location.href;
-// console.log('url',url)
-
-// 設定:分數=網址最後2字
-// --------------------------------------------------
-let score = url.substr(-2, 2)
-$('.number').html(score + '<span>%</span>')
+let total_score = JSON.parse(localStorage.getItem('total_score'))
+console.log('total_score', total_score)
 
 // 設定:看解答hover
 // --------------------------------------------------
 $('.answer').mouseenter(function () {
     $(this)
-    .removeClass('animate__fadeInUp')
-    .removeClass('delay15')
-    .addClass('animate__heartBeat')
-    .addClass('time-075s')
-    .text('這樣好嗎')
-    setTimeout(function () {
-        $('.answer').
-        removeClass('animate__heartBeat')
-    }, 750)
-})
-.mouseleave(function () {
-    $(this)
-    .addClass('animate__fadeIn')
-    .text('偷看答案')
-    setTimeout(function () {
-        $('.answer')
-        .removeClass('animate__fadeIn')
-    }, 750)
-})
-
-// 設定:顯示文字
-// --------------------------------------------------
-// 設定:當100％時,最前面+1
-$(".number:contains('00')").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing', ' -.3rem')
-    .next().text('品牌達人 !').css('color', 'var(--or)')
-    .parent().css('padding', '75px 35px')
-    .prev().children().css('animation-name', 'left_circle_100')
-    .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
-    .parent().parent().addClass('light').addClass('circle_process_100')
-    .next().next().mouseenter(function () {
-        $(this)
         .removeClass('animate__fadeInUp')
         .removeClass('delay15')
         .addClass('animate__heartBeat')
         .addClass('time-075s')
-        .text('不需要吧')
-        setTimeout(function () {
-            $('.answer').
+        .text('這樣好嗎')
+    setTimeout(function () {
+        $('.answer').
             removeClass('animate__heartBeat')
-        }, 750)
-    })
+    }, 750)
+})
     .mouseleave(function () {
         $(this)
-        .addClass('animate__fadeIn')
-        .text('偷看答案')
+            .addClass('animate__fadeIn')
+            .text('偷看答案')
         setTimeout(function () {
             $('.answer')
-            .removeClass('animate__fadeIn')
+                .removeClass('animate__fadeIn')
         }, 750)
     })
 
-// 設定:當80％時
-$(".number:contains('80')")
-    .next().text('還差一點 !')
-    .parent().prev().children().css('animation-name', 'left_circle_80')
-    .parent().prev().children().css('animation-name', 'right_circle_80').addClass('right_circle_g')
-// 設定:當60％時
-$(".number:contains('60')").next().text('剛好及格 !')
-    .parent().prev().children().css('animation-name', 'left_circle_60')
-    .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
-// 設定:當40％時
-$(".number:contains('40')").next().text('眼花了嗎 !')
-    .parent().prev().children().css('animation-name', 'left_circle_40')
-    .parent().prev().children().css('animation-name', 'right_circle_40').addClass('right_circle_g')
-// 設定:當20％時
-$(".number:contains('20')").next().text('藍瘦香菇 !')
-    .parent().prev().children().css('animation-name', 'left_circle_20')
-    .parent().prev().children().css('animation-name', 'right_circle_20').addClass('right_circle_g')
-// 設定:當0％時,最前面
-$(".number:contains('ml')").html('0<span>%</span>')
-    .next().text('加油好嗎 !')
-
+// 設定:顯示文字
+// --------------------------------------------------
+// 設定:當0％時
+if (total_score >= 0) {
+    $(".number").html('0<span>%</span>')
+        .next().text('加油好嗎 !')
+    // 設定:當20％時
+    if (total_score >= 20) {
+        $(".number").html('20<span>%</span>')
+            .next().text('藍瘦香菇 !')
+            .parent().prev().children().css('animation-name', 'left_circle_20')
+            .parent().prev().children().css('animation-name', 'right_circle_20').addClass('right_circle_g')
+        // 設定:當40％時
+        if (total_score >= 40) {
+            $(".number").html('40<span>%</span>')
+                .next().text('眼花了嗎 !')
+                .parent().prev().children().css('animation-name', 'left_circle_40')
+                .parent().prev().children().css('animation-name', 'right_circle_40').addClass('right_circle_g')
+            if (total_score >= 60) {
+                // 設定:當60％時
+                $(".number").html('60<span>%</span>')
+                    .next().text('剛好及格 !')
+                    .parent().prev().children().css('animation-name', 'left_circle_60')
+                    .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
+                // 設定:當80％時
+                if (total_score >= 80) {
+                    $(".number").html('80<span>%</span>')
+                        .next().text('還差一點 !')
+                        .parent().prev().children().css('animation-name', 'left_circle_60')
+                        .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
+                    // 設定:當100％時,最前面+1
+                    if (total_score >= 100) {
+                        $(".number").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing', ' -.3rem')
+                            .next().text('品牌達人 !').css('color', 'var(--or)')
+                            .parent().css('padding', '75px 35px')
+                            .prev().children().css('animation-name', 'left_circle_100')
+                            .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
+                            .parent().parent().addClass('light').addClass('circle_process_100')
+                            .next().next().mouseenter(function () {
+                                $(this)
+                                    .removeClass('animate__fadeInUp')
+                                    .removeClass('delay15')
+                                    .addClass('animate__heartBeat')
+                                    .addClass('time-075s')
+                                    .text('不需要吧')
+                                setTimeout(function () {
+                                    $('.answer').
+                                        removeClass('animate__heartBeat')
+                                }, 750)
+                            })
+                            .mouseleave(function () {
+                                $(this)
+                                    .addClass('animate__fadeIn')
+                                    .text('偷看答案')
+                                setTimeout(function () {
+                                    $('.answer')
+                                        .removeClass('animate__fadeIn')
+                                }, 750)
+                            })
+                    }
+                }
+            }
+        }
+    }
+}
 
 // 設定:看解答
 // --------------------------------------------------
