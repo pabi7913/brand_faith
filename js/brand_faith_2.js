@@ -1,6 +1,6 @@
 // 尋找網址
 // --------------------------------------------------
-let url = location.hash;
+let url = location.href;
 // console.log('url',url)
 
 // 設定:分數=網址最後2字
@@ -97,7 +97,7 @@ $('.answer').click(function () {
     }, 400)
 
     click = click + 1
-    console.log('click', click)
+    // console.log('click', click)
     if (click > 0) {
         $('.answer_card').addClass('animate__flipOutY')
         setTimeout(function () {
