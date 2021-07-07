@@ -56,7 +56,7 @@ $('.answer').mouseenter(function () {
 .mouseleave(function () {
     $(this)
     .addClass('animate__fadeIn')
-    .text('偷看解答')
+    .text('偷看答案')
     setTimeout(function () {
         $('.answer')
         .removeClass('animate__fadeIn')
