@@ -11,9 +11,9 @@ $('.number').html(score + '<span>%</span>')
 // 設定:顯示文字
 // --------------------------------------------------
 // 設定:當100％時,最前面+1
-$(".number:contains('00')").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing',' -.3rem')
+$(".number:contains('00')").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing', ' -.3rem')
     .next().text('品牌達人 !').css('color', 'var(--or)')
-    .parent().css('padding','75px 35px')
+    .parent().css('padding', '75px 35px')
     .prev().children().css('animation-name', 'left_circle_100')
     .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
     .parent().parent().addClass('light').addClass('circle_process_100')
@@ -39,17 +39,36 @@ $(".number:contains('20')").next().text('藍瘦香菇 !')
 $(".number:contains('ml')").html('0<span>%</span>')
     .next().text('加油好嗎 !')
 
-    $('.answer').mouseenter(function () {
-        $(this).text('這樣好嗎？')
-    }).mouseleave(function () {
-        $(this).text('偷看答案')})
+// 設定:看解答hover
+// --------------------------------------------------
+$('.answer').mouseenter(function () {
+    $(this)
+    .removeClass('animate__fadeInUp')
+    .removeClass('delay15')
+    .addClass('animate__heartBeat')
+    .addClass('time-075s')
+    .text('這樣好嗎')
+    setTimeout(function () {
+        $('.answer').
+        removeClass('animate__heartBeat')
+    }, 750)
+})
+.mouseleave(function () {
+    $(this)
+    .addClass('animate__fadeIn')
+    .text('偷看解答')
+    setTimeout(function () {
+        $('.answer')
+        .removeClass('animate__fadeIn')
+    }, 750)
+})
 
 // 設定:看解答
 // --------------------------------------------------
 let click = -1;
 
 $('.answer').click(function () {
-    
+
     $(this).next().removeClass('d-none')
     setTimeout(function () {
         // $('.answer').text('google')
@@ -67,7 +86,7 @@ $('.answer').click(function () {
             $('.answer_card img').attr('src', 'img/amazon-2.png')
         }, 400)
         if (click > 1) {
-            
+
             $('.answer_card').addClass('animate__flipOutY')
             setTimeout(function () {
                 // $('.answer').text('instagram')
@@ -107,6 +126,6 @@ $('.answer').click(function () {
                     }, 400)
                 }
             }
-    }
+        }
     }
 })

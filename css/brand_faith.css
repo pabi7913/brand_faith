@@ -1,7 +1,7 @@
 /* 0 */
 /* ------------------------------- */
 body{
-    font-family: 'Baloo 2','Kiwi Maru',sans-serif;
+    font-family: 'Kiwi Maru','Noto Sans TC','Baloo 2','Roboto';
 }
 
 
@@ -33,7 +33,7 @@ section{
 .title{
     color:var(--wh);
     font-size: 3rem;
-    font-weight:100;
+    font-weight:400;
     height:fit-content;
     text-align: center;
     width:100%;
@@ -263,7 +263,7 @@ height: 12.5vh;
     color: var(--re);
     width:fit-content;
     font-size: 2.25rem;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 3rem;
 }
 .one .popup .content i{
@@ -392,6 +392,7 @@ height: 12.5vh;
 	height: 275px;
     border-radius: 50%;
     padding:75px 50px;
+    font-family: 'Roboto';
    white-space: nowrap;
    color:var(--wh);
    top:50%;
@@ -411,6 +412,7 @@ font-size: 2rem;
 }
 /* 評語 */
 .circle_content .content{
+font-family: 'Kiwi Maru';
 font-size: 2rem;
 }
 /* ------------------------------- */
