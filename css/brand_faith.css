@@ -67,24 +67,34 @@ section{
 /* zero */
 /* ------------------------------- */
 .zero{
-top:35vh;
+top:30vh;
 left:50vw;
 width:100%;
 transform: translateX(-50%);
 }
 @media (min-width: 1057px) {
     .zero{
+        top:35vh;
         width:50%;
         }
+}
+@media (max-height: 812px) {
+
 }
 
 /* one */
 /* ------------------------------- */
 .one{
     width:100%;
-    top:10vh;
+    top:5vh;
     left:50vw;
     transform: translateX(-50%);
+}
+@media (min-width: 1057px) {
+    .one{
+        top:10vh;
+        transform: translateX(-50%);
+    }
 }
 
 .one .title{
@@ -290,16 +300,15 @@ height: 12.5vh;
 /* ------------------------------- */
 .two{
     width:100%;
-    top:50vh;
+    top:5vh;
     left:50vw;
-    transform: translateX(-50%)translateY(-50%);
+    transform: translateX(-50%);
 }
 @media (min-width: 1057px) {
-    /* .two{
+    .two{
         top:50vh;
-        left:50vw;
         transform: translateX(-50%)translateY(-50%);
-    } */
+    }
 }
 
 .two .title{
