@@ -3,8 +3,8 @@
 let total_score = JSON.parse(localStorage.getItem('total_score'))
 // console.log('total_score', total_score)
 
-let page1 = JSON.parse(localStorage.getItem('page1'))
-// console.log('page1', page1)
+let page = JSON.parse(localStorage.getItem('page'))
+// console.log('page', page)
 
 // 設定:score=null時score=0
 // --------------------------------------------------
@@ -117,7 +117,7 @@ if (total_score >= 0) {
 // --------------------------------------------------
 $('.button').click(function () {
     localStorage.removeItem('total_score')
-    localStorage.removeItem('page1')
+    localStorage.removeItem('page')
 })
 
 // 設定:看解答

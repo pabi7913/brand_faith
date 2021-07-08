@@ -11,21 +11,21 @@ sum5 = 0
 
 // 設定:從結果頁返回時清掉cookie
 // --------------------------------------------------
-page1 = window.performance.navigation.type
-// console.log('page1', page1)
+page = window.performance.navigation.type
+// console.log('page', page)
 
-localStorage.setItem('page1', page1)
+localStorage.setItem('page', page)
 
 // 按鈕觸發:page=0
-if (page1 > -1) {
+if (page > -1) {
 
     // 重新整理:page=1
-    if (page1 > 0) {
+    if (page > 0) {
 
         // 返回上頁或下頁:page=2
-        if (page1 > 1) {
+        if (page > 1) {
             localStorage.removeItem('total_score')
-            localStorage.removeItem('page1')
+            localStorage.removeItem('page')
         }
     }
 }
