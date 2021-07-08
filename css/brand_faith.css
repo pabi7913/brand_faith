@@ -84,7 +84,7 @@ transform: translateX(-50%);
 /* ------------------------------- */
 .one{
     width:100%;
-    top:4vh;
+    top:0vh;
     left:50vw;
     transform: translateX(-50%);
 }
