@@ -23,29 +23,65 @@ if (total_score != null) {
 let url = location.href
 // console.log('url', url);
 
-// 設定:看解答hover
+// 設定:看解答hover:手機版不顯示
 // --------------------------------------------------
-$('.answer').mouseenter(function () {
-    $(this)
-        .removeClass('animate__fadeInUp')
-        .removeClass('delay15')
-        .addClass('animate__heartBeat')
-        .addClass('time-075s')
-        .text('這樣好嗎')
-    setTimeout(function () {
-        $('.answer').
-            removeClass('animate__heartBeat')
-    }, 750)
-})
-    .mouseleave(function () {
+// 1.
+// 條件1:視窗尺寸>=601
+if ($(window).width() >= 601) {
+    $('.answer').mouseenter(function () {
         $(this)
-            .addClass('animate__fadeIn')
-            .text('偷看答案')
+            .removeClass('animate__fadeInUp')
+            .removeClass('delay15')
+            .addClass('animate__heartBeat')
+            .addClass('time-075s')
+            .text('這樣好嗎')
         setTimeout(function () {
-            $('.answer')
-                .removeClass('animate__fadeIn')
+            $('.answer').
+                removeClass('animate__heartBeat')
         }, 750)
     })
+        .mouseleave(function () {
+            $(this)
+                .addClass('animate__fadeIn')
+                .text('偷看答案')
+            setTimeout(function () {
+                $('.answer')
+                    .removeClass('animate__fadeIn')
+            }, 750)
+        })
+}else{
+    $('.answer').unbind('mouseenter').unbind('mouseleave')
+}
+// 2.
+// 設定:調整螢幕大小時
+$(window).resize(function () {
+    if ($(window).width() >= 601) {
+        $('.answer').mouseenter(function () {
+            $(this)
+                .removeClass('animate__fadeInUp')
+                .removeClass('delay15')
+                .addClass('animate__heartBeat')
+                .addClass('time-075s')
+                .text('這樣好嗎')
+            setTimeout(function () {
+                $('.answer').
+                    removeClass('animate__heartBeat')
+            }, 750)
+        })
+            .mouseleave(function () {
+                $(this)
+                    .addClass('animate__fadeIn')
+                    .text('偷看答案')
+                setTimeout(function () {
+                    $('.answer')
+                        .removeClass('animate__fadeIn')
+                }, 750)
+            })
+    }
+    else{
+        $('.answer').unbind('mouseenter').unbind('mouseleave')
+    }
+})
 
 // 設定:顯示文字
 // --------------------------------------------------
