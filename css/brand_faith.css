@@ -294,6 +294,13 @@ height: 12.5vh;
     left:50vw;
     transform: translateX(-50%)translateY(-50%);
 }
+@media (min-width: 1057px) {
+    /* .two{
+        top:50vh;
+        left:50vw;
+        transform: translateX(-50%)translateY(-50%);
+    } */
+}
 
 .two .title{
     font-size: 2.5rem;

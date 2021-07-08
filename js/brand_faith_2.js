@@ -1,10 +1,10 @@
 // 取出上頁分數sum
 // --------------------------------------------------
 let total_score = JSON.parse(localStorage.getItem('total_score'))
-console.log('total_score', total_score)
+// console.log('total_score', total_score)
 
 let page1 = JSON.parse(localStorage.getItem('page1'))
-console.log('page1', page1)
+// console.log('page1', page1)
 
 // 設定:score=null時score=0
 // --------------------------------------------------
@@ -21,7 +21,7 @@ if (total_score != null) {
 // 設定:尋找網址
 // --------------------------------------------------
 let url = location.href
-console.log('url', url);
+// console.log('url', url);
 
 // 設定:看解答hover
 // --------------------------------------------------

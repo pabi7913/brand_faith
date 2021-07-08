@@ -12,7 +12,7 @@ sum5 = 0
 // 設定:從結果頁返回時清掉cookie
 // --------------------------------------------------
 page1 = window.performance.navigation.type
-console.log('page1', page1)
+// console.log('page1', page1)
 
 localStorage.setItem('page1', page1)
 
