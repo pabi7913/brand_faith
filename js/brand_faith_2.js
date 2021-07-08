@@ -3,6 +3,26 @@
 let total_score = JSON.parse(localStorage.getItem('total_score'))
 console.log('total_score', total_score)
 
+let page1 = JSON.parse(localStorage.getItem('page1'))
+console.log('page1', page1)
+
+// 設定:score=null時score=0
+// --------------------------------------------------
+if (total_score != null) {
+
+    // 全部網址後面加上得分
+    // --------------------------------------------------
+    history.pushState('', '', '?score=' + total_score)
+} else {
+    total_score = 0
+    history.pushState('', '', '?score=0')
+}
+
+// 設定:尋找網址
+// --------------------------------------------------
+let url = location.href
+console.log('url', url);
+
 // 設定:看解答hover
 // --------------------------------------------------
 $('.answer').mouseenter(function () {
@@ -92,6 +112,13 @@ if (total_score >= 0) {
         }
     }
 }
+
+// 設定:按再試一次時清除cookie
+// --------------------------------------------------
+$('.button').click(function () {
+    localStorage.removeItem('total_score')
+    localStorage.removeItem('page1')
+})
 
 // 設定:看解答
 // --------------------------------------------------

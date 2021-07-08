@@ -9,16 +9,36 @@ sum3 = 0
 sum4 = 0
 sum5 = 0
 
+// 設定:從結果頁返回時清掉cookie
+// --------------------------------------------------
+page1 = window.performance.navigation.type
+console.log('page1', page1)
+
+localStorage.setItem('page1', page1)
+
+// 按鈕觸發:page=0
+if (page1 > -1) {
+
+    // 重新整理:page=1
+    if (page1 > 0) {
+
+        // 返回上頁或下頁:page=2
+        if (page1 > 1) {
+            localStorage.removeItem('total_score')
+            localStorage.removeItem('page1')
+        }
+    }
+}
 
 // 設定:點選選項
 // --------------------------------------------------
 $('.option').click(function () {
     // 結果:點選變白色,圖變大,其餘透白色,圖復原
     $(this).addClass('selected')
-    .children().addClass('biger').addClass('time-025s')
-    .parent().siblings().removeClass('selected')
-    .children().removeClass('biger').removeClass('time-025s')
-    
+        .children().addClass('biger').addClass('time-025s')
+        .parent().siblings().removeClass('selected')
+        .children().removeClass('biger').removeClass('time-025s')
+
     // 設定:計算有幾個選項被選取
     selected = $('.selected').length;
     // console.log('selected', selected)
@@ -28,7 +48,6 @@ $('.option').click(function () {
     if (selected != 5) {
         $('.complete').removeAttr('onclick')
     } else {
-        localStorage.setItem('sum','0')
         $('.complete').attr("onclick", "location='brand_faith_2.html'")
     }
     score = $(this).data('score')
@@ -83,26 +102,24 @@ $('.complete').click(function () {
     }
     // 改網址
     // --------------------------------------------------
-    if (sum > 0) {
-        localStorage.setItem('total_score','20')
-
-        if (sum > 1) {
-            localStorage.setItem('total_score','40')
-
-            if (sum > 2) {
-                localStorage.setItem('total_score','60')
-
-                if (sum > 3) {
-                    localStorage.setItem('total_score','80')
-
-                    if (sum > 4) {
-                        localStorage.setItem('total_score','100')
+    if (sum > -1) {
+        localStorage.setItem('total_score', '0')
+        if (sum > 0) {
+            localStorage.setItem('total_score', '20')
+            if (sum > 1) {
+                localStorage.setItem('total_score', '40')
+                if (sum > 2) {
+                    localStorage.setItem('total_score', '60')
+                    if (sum > 3) {
+                        localStorage.setItem('total_score', '80')
+                        if (sum > 4) {
+                            localStorage.setItem('total_score', '100')
+                        }
                     }
                 }
             }
         }
     }
-    
 })
 
 
@@ -126,7 +143,7 @@ $('.page').text('1')
 // 第1題：t=0/第2題：t=1/第3題：t=2/第4題：t=3/第5題：t=4
 // -------------------------
 // 預設:t為'點選按鈕移動次數'，為0
-let click= 0;
+let click = 0;
 
 // 設定:prev點選'回上1題'
 // -------------------------
@@ -139,16 +156,16 @@ $('.arrow').eq(0).click(function () {
     // 設定:title上下翻牌動畫
     // -------------------------
     $('.title').removeClass('fadein')
-    .children().eq(0).addClass('animate__animated').addClass('animate__flipInX')
+        .children().eq(0).addClass('animate__animated').addClass('animate__flipInX')
     setTimeout(function () {
         $('.title').children().eq(0).removeClass('animate__animated').removeClass('animate__flipInX')
     }, 500)
 
     // 設定:line的動畫
     // -------------------------
-    $('.line').css('animation-name','stop')
+    $('.line').css('animation-name', 'stop')
     setTimeout(function () {
-        $('.line').css('animation-name','line')
+        $('.line').css('animation-name', 'line')
     }, 1)
 
     // 設定:選項翻牌動畫
@@ -167,7 +184,7 @@ $('.arrow').eq(0).click(function () {
     // ----------
     // !!! if( click < 1) { click = 0}這個順序放在最前面，避免錯誤
     // 條件1:回到第1頁時
-    if ( click < 1) {
+    if (click < 1) {
         // 結果1-1:顯示第1區塊，移動0
         click = 0;
         // 結果1-2:prev消失
@@ -177,7 +194,7 @@ $('.arrow').eq(0).click(function () {
     }
     // ----------
     // 條件2:回到第4頁和之前時
-    if ( click <= 3) {
+    if (click <= 3) {
         // 結果2-1-1:next出現
         $(this).next().removeClass('d-none').addClass('d-flex')
         // 結果2-1-2:complete消失
@@ -185,19 +202,19 @@ $('.arrow').eq(0).click(function () {
         // 結果2-2:第4頁標題改成uber
         $('.title').find('div').text('uber')
         // 結果2-3:頁碼=按鈕移動次數+1(例如第1頁t=0,t+1=1)
-        $('.page').text( click + 1)
+        $('.page').text(click + 1)
         // ----------
         // !!!必須用這種巢狀式迴圈+搭配=，不然會造成下蓋上，永遠只有最後一行有用
         // 條件3:回到第3頁和之前時
-        if ( click <= 2) {
+        if (click <= 2) {
             // 結果3:第3頁標題改成instagram
             $('.title').find('div').text('instagram')
             // 條件4:回到第2頁和之前時
-            if ( click <= 1) {
+            if (click <= 1) {
                 // 結果4:第2頁標題改成amazon
                 $('.title').find('div').text('amazon')
                 // 條件5:回到第1頁和之前時
-                if ( click <= 0) {
+                if (click <= 0) {
                     // 結果5:第1頁標題改成chrome
                     $('.title').find('div').text('chrome')
                 }
@@ -208,7 +225,7 @@ $('.arrow').eq(0).click(function () {
     // !!!此行必須放在最下面，否則會讀不到條件1 if( click < 1) { click = 0}，造成t=-1錯誤
     // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
     $('.cards').css('transform', 'translateX' + '(' + click * -90 + 'vw)')
-    if ( click < 1) {
+    if (click < 1) {
         // 結果1-1:顯示第1區塊，移動0
         click = 0;
     }
@@ -254,7 +271,7 @@ $(window).resize(function () {
     // 結果:回到第1題的位置
     $('.cards').css('transform', 'translateX' + '(' + click + ')')
     // 條件0:回到第1頁時
-    if ( click < 1) {
+    if (click < 1) {
         // 結果0-1:顯示第1區塊，移動0
         click = 0;
         // 結果0-2-1:prev消失
@@ -307,16 +324,16 @@ $('.arrow').eq(1).click(function () {
     // 設定:title上下翻牌動畫
     // -------------------------
     $('.title').removeClass('fadein')
-    .children().eq(0).addClass('animate__animated').addClass('animate__flipInX')
+        .children().eq(0).addClass('animate__animated').addClass('animate__flipInX')
     setTimeout(function () {
         $('.title').children().eq(0).removeClass('animate__animated').removeClass('animate__flipInX')
     }, 500)
 
     // 設定:line的動畫
     // -------------------------
-    $('.line').css('animation-name','stop')
+    $('.line').css('animation-name', 'stop')
     setTimeout(function () {
-        $('.line').css('animation-name','line')
+        $('.line').css('animation-name', 'line')
     }, 1)
 
     // 設定:選項翻牌動畫
@@ -334,25 +351,25 @@ $('.arrow').eq(1).click(function () {
 
     // ----------
     // 條件1:位於第1頁以上時
-    if ( click > 0) {
+    if (click > 0) {
         // 結果1-1:回上頁按鈕要出現
         $(this).prev().fadeIn(100).removeClass('invisible')
         // 結果1-2:頁碼=按鈕移動次數+1(例如第1頁t=0,t+1=1)
-        $('.page').text( click + 1)
+        $('.page').text(click + 1)
         // 條件2:位於第2頁以上時
-        if ( click >= 1) {
+        if (click >= 1) {
             // 結果2:第2頁標題改成amazon
             $('.title').find('div').text('amazon')
             // 條件3:位於第3頁以上時
-            if ( click >= 2) {
+            if (click >= 2) {
                 // 結果3:第3頁標題改成instagram
                 $('.title').find('div').text('instagram')
                 // 條件4:位於第4頁以上時
-                if ( click >= 3) {
+                if (click >= 3) {
                     // 結果4:第4頁標題改成uber
                     $('.title').find('div').text('uber')
                     // 條件5:位於第5頁以上時
-                    if ( click >= 4) {
+                    if (click >= 4) {
                         // 結果5-1:第5頁標題改成uber
                         $('.title').find('div').text('apple')
                         // 結果5-2:頁碼為5
@@ -366,7 +383,7 @@ $('.arrow').eq(1).click(function () {
     // ----------
     // !!! if( click > 3) { click = 4}這個順序放在前面，避免錯誤
     // 條件6:位於第5頁時
-    if ( click > 3) {
+    if (click > 3) {
         // 結果6-1:顯示第5區塊，移動tx4
         click = 4;
         // 結果6-2-1:next消失
@@ -378,11 +395,11 @@ $('.arrow').eq(1).click(function () {
     // ----------
     // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
     $('.cards').css('transform', 'translateX' + '(' + click * -90 + 'vw)')
-    if ( click > 3) {
+    if (click > 3) {
         // 結果6-1:顯示第5區塊，移動tx4
         click = 4;
     }
-    if ( click != 5) {
+    if (click != 5) {
         $('.popup_wrap').addClass('d-none')
     }
 })
@@ -447,6 +464,24 @@ $(window).resize(function () {
         })
     }
 })
+// 設定:回下一頁時清除cookie
+// --------------------------------------------------
+
+// $(document).on("pageshow","#pagetwo",function(event,data){
+//     alert("abc")
+//     // alert(data.prevPage.attr("id") +" 隐藏");
+//   });
+// // let beforeunload = false;
+// // if(beforeunload=true){
+// //     // 返回上頁或到下一頁時
+// window.addEventListener('pagehide', function () {
+//     alert("abc")
+//         // localStorage.removeItem('total_score')
+//     }
+//         )
+// // }
+
+// $('.complete').addEventListener('click')
 
 
 

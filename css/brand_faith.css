@@ -337,7 +337,7 @@ height: 12.5vh;
 	right:0;
     animation-name:right_circle_0;
     /* ----------------------- */
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-timing-function:linear;
     animation-iteration-count:1;
     animation-fill-mode:forwards;
@@ -377,7 +377,7 @@ height: 12.5vh;
 	left:0;
 	animation-name:left_circle_0;
     /* ----------------------- */
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-timing-function:linear;
     animation-iteration-count:1;
     animation-fill-mode:forwards;
