@@ -6,6 +6,18 @@ let total_score = JSON.parse(localStorage.getItem('total_score'))
 let page = JSON.parse(localStorage.getItem('page'))
 // console.log('page', page)
 
+
+setTimeout(function () {
+    localStorage.removeItem('total_score')
+}, 500)
+
+
+
+// 設定清掉cookie
+function remove_score(){
+    localStorage.removeItem('total_score')
+}
+
 // 設定:score=null時score=0
 // --------------------------------------------------
 if (total_score != null) {
@@ -161,7 +173,6 @@ $('.button').click(function () {
 let click = -1;
 
 $('.answer').click(function () {
-
     $(this).next().removeClass('d-none')
     setTimeout(function () {
         // $('.answer').text('google')
@@ -267,9 +278,9 @@ if (share_content
     // console.log(this_page_full_link)
 
     // 設定各個按鈕架構
-    let fb = '<div class="fb-like" data-url="' + this_page + '"data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>';
-    let line = '<div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="' + this_page + '" data-color="default" data-size="small" data-count="true" style="display: none;"></div>';
-    let twitter = '<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>';
+    let fb = '<div class="fb-like" onclick="remove_score()" data-url="' + this_page + '"data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>';
+    let line = '<div class="line-it-button" onclick="remove_score()" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="' + this_page + '" data-color="default" data-size="small" data-count="true" style="display: none;"></div>';
+    let twitter = '<a onclick="remove_score()" href="https://twitter.com/share" class="twitter-share-button">Tweet</a>';
 
     // 設定外包group
     let share_buttons =
@@ -279,6 +290,7 @@ if (share_content
         '<li>' + twitter + '</li>' +
         '</ul>';
 
+    
     // 在share_content的最前面插入上面share_group
     share_content.insertAdjacentHTML('afterbegin', share_buttons);
 
@@ -286,7 +298,14 @@ if (share_content
     //     let originShare = document.querySelector('.sharedaddy');
     //     originShare.insertAdjacentHTML('beforebegin', share_buttons);
     // }
+
+    window.addEventListener("click", function() {
+        console.log('hi')
+    })
 }
+
+
+
 // 設定:分享網址得分
 // ----------------------------------------------
 // 設定:從外部點選結果頁時,不要紀錄本地得分，以網址後得分為主
@@ -294,85 +313,72 @@ page2 = window.performance.navigation.type
 // console.log('page2', page2)
 
 // this_page_score_re = /^\?score\=\d+$/;
-
 let this_page_score = location.search.substr(7, 3)
-// console.log('this_page_score', this_page_score);
+console.log('this_page_score', this_page_score);
 
-window.addEventListener('pageshow', function () {
-    localStorage.removeItem('page')
+if (this_page_score >= 0) {
+    $(".number").html('0<span>%</span>')
+        .next().text('加油好嗎 !')
+    // 設定:當20％時
+    if (this_page_score >= 20) {
+        $(".number").html('20<span>%</span>')
+            .next().text('藍瘦香菇 !')
+            .parent().prev().children().css('animation-name', 'left_circle_20')
+            .parent().prev().children().css('animation-name', 'right_circle_20').addClass('right_circle_g')
+        // 設定:當40％時
+        if (this_page_score >= 40) {
+            $(".number").html('40<span>%</span>')
+                .next().text('眼花了嗎 !')
+                .parent().prev().children().css('animation-name', 'left_circle_40')
+                .parent().prev().children().css('animation-name', 'right_circle_40').addClass('right_circle_g')
+            if (this_page_score >= 60) {
+                // 設定:當60％時
+                $(".number").html('60<span>%</span>')
+                    .next().text('剛好及格 !')
+                    .parent().prev().children().css('animation-name', 'left_circle_60')
+                    .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
+                // 設定:當80％時
+                if (this_page_score >= 80) {
+                    $(".number").html('80<span>%</span>')
+                        .next().text('還差一點 !')
+                        .parent().prev().children().css('animation-name', 'left_circle_60')
+                        .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
+                    // 設定:當100％時
+                    if (this_page_score >= 100) {
+                        $(".number").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing', ' -.3rem')
+                            .next().text('品牌達人 !').css('color', 'var(--or)')
+                            .parent().css('padding', '75px 35px')
+                            .prev().children().css('animation-name', 'left_circle_100')
+                            .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
+                            .parent().parent().addClass('light').addClass('circle_process_100')
+                            .next().next().mouseenter(function () {
+                                $(this)
+                                    .removeClass('animate__fadeInUp')
+                                    .removeClass('delay15')
+                                    .addClass('animate__heartBeat')
+                                    .addClass('time-075s')
+                                    .text('不需要吧')
+                                setTimeout(function () {
+                                    $('.answer').
+                                        removeClass('animate__heartBeat')
+                                }, 750)
+                            })
+                            .mouseleave(function () {
+                                $(this)
+                                    .addClass('animate__fadeIn')
+                                    .text('偷看答案')
+                                setTimeout(function () {
+                                    $('.answer')
+                                        .removeClass('animate__fadeIn')
+                                }, 750)
+                            })
+                    }
+                }
+            }
+        }
+    }
 }
-)
 
-// 設定:顯示文字
-// --------------------------------------------------
-// 設定:當0％時
-// if (page2 >= 0) {
-// if (this_page_score == null) {
-//     this_page_score = 0
-
-// } else if (this_page_score >= 0) {
-//     $(".number").html('0<span>%</span>')
-//         .next().text('加油好嗎 !')
-//     // 設定:當20％時
-//     if (this_page_score >= 20) {
-//         $(".number").html('20<span>%</span>')
-//             .next().text('藍瘦香菇 !')
-//             .parent().prev().children().css('animation-name', 'left_circle_20')
-//             .parent().prev().children().css('animation-name', 'right_circle_20').addClass('right_circle_g')
-//         // 設定:當40％時
-//         if (this_page_score >= 40) {
-//             $(".number").html('40<span>%</span>')
-//                 .next().text('眼花了嗎 !')
-//                 .parent().prev().children().css('animation-name', 'left_circle_40')
-//                 .parent().prev().children().css('animation-name', 'right_circle_40').addClass('right_circle_g')
-//             if (this_page_score >= 60) {
-//                 // 設定:當60％時
-//                 $(".number").html('60<span>%</span>')
-//                     .next().text('剛好及格 !')
-//                     .parent().prev().children().css('animation-name', 'left_circle_60')
-//                     .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
-//                 // 設定:當80％時
-//                 if (this_page_score >= 80) {
-//                     $(".number").html('80<span>%</span>')
-//                         .next().text('還差一點 !')
-//                         .parent().prev().children().css('animation-name', 'left_circle_60')
-//                         .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
-//                     // 設定:當100％時
-//                     if (this_page_score >= 100) {
-//                         $(".number").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing', ' -.3rem')
-//                             .next().text('品牌達人 !').css('color', 'var(--or)')
-//                             .parent().css('padding', '75px 35px')
-//                             .prev().children().css('animation-name', 'left_circle_100')
-//                             .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
-//                             .parent().parent().addClass('light').addClass('circle_process_100')
-//                             .next().next().mouseenter(function () {
-//                                 $(this)
-//                                     .removeClass('animate__fadeInUp')
-//                                     .removeClass('delay15')
-//                                     .addClass('animate__heartBeat')
-//                                     .addClass('time-075s')
-//                                     .text('不需要吧')
-//                                 setTimeout(function () {
-//                                     $('.answer').
-//                                         removeClass('animate__heartBeat')
-//                                 }, 750)
-//                             })
-//                             .mouseleave(function () {
-//                                 $(this)
-//                                     .addClass('animate__fadeIn')
-//                                     .text('偷看答案')
-//                                 setTimeout(function () {
-//                                     $('.answer')
-//                                         .removeClass('animate__fadeIn')
-//                                 }, 750)
-//                             })
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-// }
 
 
 
