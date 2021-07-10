@@ -1,10 +1,10 @@
 // 取出上頁分數sum
 // --------------------------------------------------
 let total_score = JSON.parse(localStorage.getItem('total_score'))
-console.log('total_score', total_score)
+// console.log('total_score', total_score)
 
 let page = JSON.parse(localStorage.getItem('page'))
-console.log('page', page)
+// console.log('page', page)
 
 // 設定:score=null時score=0
 // --------------------------------------------------
@@ -291,20 +291,14 @@ if (share_content
 // ----------------------------------------------
 // 設定:從外部點選結果頁時,不要紀錄本地得分，以網址後得分為主
 page2 = window.performance.navigation.type
-console.log('page2', page2)
+// console.log('page2', page2)
 
 // this_page_score_re = /^\?score\=\d+$/;
 
 let this_page_score = location.search.substr(7, 3)
-console.log('this_page_score', this_page_score);
+// console.log('this_page_score', this_page_score);
 
 window.addEventListener('pageshow', function () {
-    // let this_page_score = location.search.substr(7, 3)
-    // console.log('this_page_score', this_page_score);
-    // console.log('this_page_score', this_page_score);
-    // new_page = window.performance.navigation.redirectCount
-    // localStorage.setItem('new_page', new_page)
-    // console.log('new_page',new_page)
     localStorage.removeItem('page')
 }
 )
