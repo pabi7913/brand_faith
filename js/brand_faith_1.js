@@ -467,21 +467,14 @@ $(window).resize(function () {
 // 設定:回下一頁時清除cookie
 // --------------------------------------------------
 
-// $(document).on("pageshow","#pagetwo",function(event,data){
-//     alert("abc")
-//     // alert(data.prevPage.attr("id") +" 隐藏");
-//   });
-// // let beforeunload = false;
-// // if(beforeunload=true){
-// //     // 返回上頁或到下一頁時
+
 // window.addEventListener('pagehide', function () {
 //     alert("abc")
 //         // localStorage.removeItem('total_score')
 //     }
-//         )
-// // }
 
-// $('.complete').addEventListener('click')
+
+
 
 
 
