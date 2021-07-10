@@ -267,8 +267,8 @@ if (share_content
     // console.log(this_page_full_link)
 
     // 設定各個按鈕架構
-    let fb = '<div class="fb-like" data-url="' + this_page+ '"data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>';
-    let line = '<div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="' + this_page+ '" data-color="default" data-size="small" data-count="true" style="display: none;"></div>';
+    let fb = '<div class="fb-like" data-url="' + this_page + '"data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>';
+    let line = '<div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="' + this_page + '" data-color="default" data-size="small" data-count="true" style="display: none;"></div>';
     let twitter = '<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>';
 
     // 設定外包group
