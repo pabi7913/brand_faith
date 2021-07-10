@@ -49,7 +49,7 @@ if ($(window).width() >= 601) {
                     .removeClass('animate__fadeIn')
             }, 750)
         })
-}else{
+} else {
     $('.answer').unbind('mouseenter').unbind('mouseleave')
 }
 // 2.
@@ -78,7 +78,7 @@ $(window).resize(function () {
                 }, 750)
             })
     }
-    else{
+    else {
         $('.answer').unbind('mouseenter').unbind('mouseleave')
     }
 })
@@ -222,3 +222,68 @@ $('.answer').click(function () {
         }
     }
 })
+// share
+// ----------------------------------------------
+let share_content = document.querySelector('.share_content');
+// let this_page = location.pathname !== '/';
+console.log(location.pathname)
+// let notCategory = location.pathname.indexOf('category') === -1;
+// console.log(location.pathname.indexOf(2))
+// let notTag = location.pathname.indexOf('tag') === -1;
+// console.log(notTag)
+
+// step1:載入JS
+
+// ---------------------
+function plus_share_js(link) {
+    // 設定script標籤
+    let share_js = document.createElement("script");
+    // 設定script內的連結=link內容
+    // ???tweet沒有會出錯
+    share_js.src = link;
+    // 設定加在head後面
+    document.head.appendChild(share_js);
+}
+//cdn
+// ---------------------
+// line
+plus_share_js('https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js');
+// fb
+plus_share_js('https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.0');
+// twitter
+plus_share_js('https://platform.twitter.com/widgets.js');
+// console.log(plus_share_js)
+
+// 條件1:有找到share_content class(和位在這ㄧ頁時)
+if (share_content
+    // && this_page
+    // && notCategory && notTag
+) {
+    // 抓取實際完整網址
+    // ???href會出錯
+    //   let this_page_full_link = document.querySelector('[rel="canonical"]').href;
+    let this_page_full_link = document.querySelector('[rel="canonical"]');
+    // ???答案是null
+    // console.log(this_page_full_link)
+
+    // 設定各個按鈕架構
+    let fb = '<div class="fb-like" data-href="' + this_page_full_link + '" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>';
+    let line = '<div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="' + this_page_full_link + '" data-color="default" data-size="small" data-count="true" style="display: none;"></div>';
+    let twitter = '<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>';
+
+    // 設定外包group
+    let share_buttons =
+        '<ul class="share_buttons">' +
+            '<li>' + fb + '</li>' +
+            '<li>' + line + '</li>' +
+            '<li>' + twitter + '</li>' +
+        '</ul>';
+
+        // 在share_content的最前面插入上面share_group
+    share_content.insertAdjacentHTML('afterbegin', share_buttons);
+
+    // if (document.querySelector('.sharedaddy')) {
+    //     let originShare = document.querySelector('.sharedaddy');
+    //     originShare.insertAdjacentHTML('beforebegin', share_buttons);
+    // }
+}
