@@ -323,24 +323,36 @@ height: 12.5vh;
 .circle_process{
     border-radius: 50%;
     position: relative;
-	width: 300px;
-	height : 300px;  
+	width: 250px;
+	height : 250px;  
+}
+@media (min-width: 1057px) {
+    .circle_process{
+        width: 300px;
+        height : 300px;  
+    }
 }
 
 /* right */
 /* -------------------- */
 .circle_process .right_part{
     top:0;
-	width: 150px;
-	height: 300px;
+	width: 125px;
+	height: 250px;
     /* ----------------------- */
     right:0;
-
 }
+@media (min-width: 1057px) {
+    .circle_process .right_part{
+        width: 150px;
+        height: 300px;
+    }
+}
+
 .circle_process .right_circle{
     position: relative;
-    width: 300px;
-	height: 300px;
+    width: 250px;
+	height: 250px;
 	border:15px solid rgba(50, 124, 215, 0.2);
     /* background: linear-gradient(rgb(250, 110, 125)0%,var(--or) 45% ); */
 	border-radius: 50%;
@@ -355,6 +367,16 @@ height: 12.5vh;
     animation-timing-function:linear;
     animation-iteration-count:1;
     animation-fill-mode:forwards;
+}
+@media (min-width: 1057px) {
+    .circle_process .right_circle{
+        width: 300px;
+        height: 300px;
+        border:15px solid rgba(50, 124, 215, 0.2);
+        /* ----------------------- */
+        border-top:15px solid var(--or);
+        border-right:15px solid var(--or);
+    }
 }
 
 .right_circle_g:before{
@@ -372,15 +394,21 @@ height: 12.5vh;
 /* -------------------- */
 .circle_process .left_part{
     top:0;
-	width: 150px;
-	height: 300px;
+	width: 125px;
+	height: 250px;
     /* ----------------------- */
     left:0;
 }
+@media (min-width: 1057px) {
+    .circle_process .left_part{
+        width: 150px;
+        height: 300px;
+    }
+}
 .circle_process .left_circle{
     position: relative;
-    width: 300px;
-	height: 300px;
+    width: 250px;
+	height: 250px;
 	border:15px solid rgba(50, 124, 215, 0.2);
     /* background: linear-gradient(rgb(250, 110, 125)0%,var(--or) 45% ); */
 	border-radius: 50%;
@@ -396,6 +424,12 @@ height: 12.5vh;
     animation-iteration-count:1;
     animation-fill-mode:forwards;
 }
+@media (min-width: 1057px) {
+    .circle_process .left_circle{
+        width: 300px;
+	height: 300px;
+    }
+}
 
 .left_circle_g:before{
     position: absolute;
@@ -408,10 +442,10 @@ height: 12.5vh;
 
 .circle_content{
     background-color: #000;
-    width: 275px;
-	height: 275px;
+    width: 225px;
+	height: 225px;
     border-radius: 50%;
-    padding:75px 50px;
+    padding:45px 50px;
     font-family: 'Roboto';
    white-space: nowrap;
    color:var(--wh);
@@ -420,12 +454,26 @@ height: 12.5vh;
    transform: translateX(-50%)translateY(-50%);
    z-index:2;
 }
+@media (min-width: 1057px) {
+    .circle_content{
+        width: 275px;
+	height: 275px;
+    padding:75px 50px;
+    }
+}
 /* 數字 */
 .circle_content .number{
-font-size: 7rem;
+font-size: 6rem;
 font-weight:200;
-line-height:4rem;
+line-height:2.5rem;
 }
+@media (min-width: 1057px) {
+    .circle_content .number{
+        font-size: 7rem;
+        line-height:4rem;
+        }
+}
+
 /* % */
 .circle_content .number span{
 font-size: 1.75rem;
@@ -433,7 +481,12 @@ font-size: 1.75rem;
 /* 評語 */
 .circle_content .content{
 font-family: 'Kiwi Maru';
-font-size: 2rem;
+font-size: 1.5rem;
+}
+@media (min-width: 1057px) {
+    .circle_content .content{
+        font-size: 2rem;
+        }
 }
 /* ------------------------------- */
 .two .button{

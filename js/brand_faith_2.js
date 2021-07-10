@@ -113,7 +113,7 @@ if (total_score >= 0) {
                         .next().text('還差一點 !')
                         .parent().prev().children().css('animation-name', 'left_circle_60')
                         .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
-                    // 設定:當100％時,最前面+1
+                    // 設定:當100％時
                     if (total_score >= 100) {
                         $(".number").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing', ' -.3rem')
                             .next().text('品牌達人 !').css('color', 'var(--or)')
@@ -275,12 +275,12 @@ if (share_content
     // 設定外包group
     let share_buttons =
         '<ul class="share_buttons">' +
-            '<li>' + fb + '</li>' +
-            '<li>' + line + '</li>' +
-            '<li>' + twitter + '</li>' +
+        '<li>' + fb + '</li>' +
+        '<li>' + line + '</li>' +
+        '<li>' + twitter + '</li>' +
         '</ul>';
 
-        // 在share_content的最前面插入上面share_group
+    // 在share_content的最前面插入上面share_group
     share_content.insertAdjacentHTML('afterbegin', share_buttons);
 
     // if (document.querySelector('.sharedaddy')) {
@@ -288,3 +288,82 @@ if (share_content
     //     originShare.insertAdjacentHTML('beforebegin', share_buttons);
     // }
 }
+// 設定:分享網址得分
+// ----------------------------------------------
+// 設定:從外部點選結果頁時,不要紀錄本地得分，以網址後得分為主
+page2 = window.performance.navigation.type
+console.log('page2', page2)
+
+this_page_score_re = /^\?score\=\d+$/;
+
+let this_page_score = location.search.substr(7, 3)
+console.log('this_page_score', this_page_score);
+// 設定:顯示文字
+// --------------------------------------------------
+// 設定:當0％時
+if (page2 <= 0) {
+    if (this_page_score >= 0) {
+        $(".number").html('0<span>%</span>')
+            .next().text('加油好嗎 !')
+        // 設定:當20％時
+        if (this_page_score >= 20) {
+            $(".number").html('20<span>%</span>')
+                .next().text('藍瘦香菇 !')
+                .parent().prev().children().css('animation-name', 'left_circle_20')
+                .parent().prev().children().css('animation-name', 'right_circle_20').addClass('right_circle_g')
+            // 設定:當40％時
+            if (this_page_score >= 40) {
+                $(".number").html('40<span>%</span>')
+                    .next().text('眼花了嗎 !')
+                    .parent().prev().children().css('animation-name', 'left_circle_40')
+                    .parent().prev().children().css('animation-name', 'right_circle_40').addClass('right_circle_g')
+                if (this_page_score >= 60) {
+                    // 設定:當60％時
+                    $(".number").html('60<span>%</span>')
+                        .next().text('剛好及格 !')
+                        .parent().prev().children().css('animation-name', 'left_circle_60')
+                        .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
+                    // 設定:當80％時
+                    if (this_page_score >= 80) {
+                        $(".number").html('80<span>%</span>')
+                            .next().text('還差一點 !')
+                            .parent().prev().children().css('animation-name', 'left_circle_60')
+                            .parent().prev().children().css('animation-name', 'right_circle_60').addClass('right_circle_g')
+                        // 設定:當100％時
+                        if (this_page_score >= 100) {
+                            $(".number").html('100<span>%</span>').css('color', 'var(--or)').css('letter-spacing', ' -.3rem')
+                                .next().text('品牌達人 !').css('color', 'var(--or)')
+                                .parent().css('padding', '75px 35px')
+                                .prev().children().css('animation-name', 'left_circle_100')
+                                .parent().prev().children().css('animation-name', 'right_circle_100').addClass('right_circle_g')
+                                .parent().parent().addClass('light').addClass('circle_process_100')
+                                .next().next().mouseenter(function () {
+                                    $(this)
+                                        .removeClass('animate__fadeInUp')
+                                        .removeClass('delay15')
+                                        .addClass('animate__heartBeat')
+                                        .addClass('time-075s')
+                                        .text('不需要吧')
+                                    setTimeout(function () {
+                                        $('.answer').
+                                            removeClass('animate__heartBeat')
+                                    }, 750)
+                                })
+                                .mouseleave(function () {
+                                    $(this)
+                                        .addClass('animate__fadeIn')
+                                        .text('偷看答案')
+                                    setTimeout(function () {
+                                        $('.answer')
+                                            .removeClass('animate__fadeIn')
+                                    }, 750)
+                                })
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
