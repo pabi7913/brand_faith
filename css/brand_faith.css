@@ -222,7 +222,12 @@ height: 12.5vh;
 .one .arrow:hover{
     color:var(--bl);
 }
-.one .arrow:nth-of-type(3):hover{
+.one .arrows a{
+    transition: .2s;
+    color:var(--wh);
+}
+
+.one .arrows a:hover{
     color:var(--or);
 }
 /* ------------------------------- */
