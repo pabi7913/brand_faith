@@ -9,27 +9,6 @@ sum3 = 0
 sum4 = 0
 sum5 = 0
 
-// 設定:從結果頁返回時清掉cookie
-// --------------------------------------------------
-page = window.performance.navigation.type
-// console.log('page', page)
-
-localStorage.setItem('page', page)
-
-// 按鈕觸發:page=0
-if (page > -1) {
-
-    // 重新整理:page=1
-    if (page > 0) {
-
-        // 返回上頁或下頁:page=2
-        if (page > 1) {
-            localStorage.removeItem('total_score')
-            localStorage.removeItem('page')
-        }
-    }
-}
-
 // 設定:點選選項
 // --------------------------------------------------
 $('.option').click(function () {
@@ -41,7 +20,7 @@ $('.option').click(function () {
 
     // 設定:計算有幾個選項被選取
     selected = $('.selected').length;
-    // console.log('selected', selected)
+    console.log('selected', selected)
 
     // 計算selected,集滿5題更改complete連結
     // ---------------------
@@ -92,7 +71,7 @@ $('.options').eq(4).children().click(function () {
 $('.complete').click(function () {
     selected = $('.selected').length;
     sum = sum1 + sum2 + sum3 + sum4 + sum5
-    // console.log('sum', sum)
+    console.log('sum', sum)
     if (selected != 5) {
         // $('.complete').removeAttr('onclick')
         $('.popup_wrap').removeClass('d-none')
@@ -103,17 +82,20 @@ $('.complete').click(function () {
     // 改網址
     // --------------------------------------------------
     if (sum > -1) {
-        localStorage.setItem('total_score', '0')
+        $('.complete').attr('onclick', "location='brand_faith_2.html?_0'");
         if (sum > 0) {
-            localStorage.setItem('total_score', '20')
+            $('.complete').attr('onclick', "location='brand_faith_2.html?20'");
             if (sum > 1) {
-                localStorage.setItem('total_score', '40')
+                $('.complete').attr('onclick', "location='brand_faith_2.html?40'");
                 if (sum > 2) {
-                    localStorage.setItem('total_score', '60')
+                    $('.complete').attr('onclick', "location='brand_faith_2.html?60'");
                     if (sum > 3) {
-                        localStorage.setItem('total_score', '80')
+                        $('.complete').attr('onclick', "location='brand_faith_2.html?80'");
                         if (sum > 4) {
-                            localStorage.setItem('total_score', '100')
+                            $('.complete').attr(
+                                'onclick',
+                                "location='brand_faith_2.html?100'"
+                            );
                         }
                     }
                 }
@@ -121,6 +103,7 @@ $('.complete').click(function () {
         }
     }
 })
+    ;
 
 
 // 設定:popup按'了解'關閉popup
@@ -140,16 +123,16 @@ $('.arrow').eq(0).addClass('invisible')
 // 預設:'頁碼'從第1頁開始
 $('.page').text('1')
 
-// 第1題：t=0/第2題：t=1/第3題：t=2/第4題：t=3/第5題：t=4
+// 第1題：click=0/第2題：click=1/第3題：click=2/第4題：click=3/第5題：click=4
 // -------------------------
-// 預設:t為'點選按鈕移動次數'，為0
+// 預設:click為'點選按鈕移動次數'，為0
 let click = 0;
 
 // 設定:prev點選'回上1題'
 // -------------------------
 $('.arrow').eq(0).click(function () {
     // animate__animated animate__flipInY delay05
-    // 預設:t=每按1次減少1頁
+    // 預設:click=每按1次減少1頁
     click = click - 1;
     // console.log( click , click )
 
@@ -201,7 +184,7 @@ $('.arrow').eq(0).click(function () {
         $(this).next().next().removeClass('d-flex').addClass('d-none')
         // 結果2-2:第4頁標題改成uber
         $('.title').find('div').text('uber')
-        // 結果2-3:頁碼=按鈕移動次數+1(例如第1頁t=0,t+1=1)
+        // 結果2-3:頁碼=按鈕移動次數+1(例如第1頁click=0,click+1=1)
         $('.page').text(click + 1)
         // ----------
         // !!!必須用這種巢狀式迴圈+搭配=，不然會造成下蓋上，永遠只有最後一行有用
@@ -222,7 +205,7 @@ $('.arrow').eq(0).click(function () {
         }
     }
     // ----------
-    // !!!此行必須放在最下面，否則會讀不到條件1 if( click < 1) { click = 0}，造成t=-1錯誤
+    // !!!此行必須放在最下面，否則會讀不到條件1 if( click < 1) { click = 0}，造成click=-1錯誤
     // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
     $('.cards').css('transform', 'translateX' + '(' + click * -90 + 'vw)')
     if (click < 1) {
@@ -238,7 +221,7 @@ $('.arrow').eq(0).click(function () {
 if ($(window).width() >= 601) {
     // 結果1:設定:prev點選'回上1題'
     $('.arrow').eq(0).click(function () {
-        // ???這裡好像會繼承上面的t=t-1設定
+        // ???這裡好像會繼承上面的click=click-1設定
         // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
         $('.cards').css('transform', 'translateX' + '(' + click * -540 + 'px)')
     })
@@ -246,7 +229,7 @@ if ($(window).width() >= 601) {
     if ($(window).width() >= 1057) {
         // 結果2:設定:prev點選'回上1題'
         $('.arrow').eq(0).click(function () {
-            // ???這裡好像會繼承上面的t=t-1設定
+            // ???這裡好像會繼承上面的click=click-1設定
             // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
             $('.cards').css('transform', 'translateX' + '(' + click * -950 + 'px)')
         })
@@ -255,7 +238,7 @@ if ($(window).width() >= 601) {
 else {
     // 否決結果1:設定:prev點選'回上1題'
     $('.arrow').eq(0).click(function () {
-        // ???這裡好像會繼承上面的t=t-1設定
+        // ???這裡好像會繼承上面的click=click-1設定
         // 否決結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
         $('.cards').css('transform', 'translateX' + '(' + click * -90 + 'vw)')
     })
@@ -266,7 +249,7 @@ else {
 $(window).resize(function () {
     // !!!為了解決resize的時候t的寬度會不固定,決定resize時，直接回到第1題
     // ---------------------
-    // 預設:t=0
+    // 預設:click=0
     click = 0;
     // 結果:回到第1題的位置
     $('.cards').css('transform', 'translateX' + '(' + click + ')')
@@ -289,7 +272,7 @@ $(window).resize(function () {
     if ($(window).width() >= 601) {
         // 結果1:設定:prev點選'回上1題'
         $('.arrow').eq(0).click(function () {
-            // ???這裡好像會繼承上面的t=t-1設定
+            // ???這裡好像會繼承上面的click=click-1設定
             // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
             $('.cards').css('transform', 'translateX' + '(' + click * -540 + 'px)')
         })
@@ -297,7 +280,7 @@ $(window).resize(function () {
         if ($(window).width() >= 1057) {
             // 結果2:設定:prev點選'回上1題'
             $('.arrow').eq(0).click(function () {
-                // ???這裡好像會繼承上面的t=t-1設定
+                // ???這裡好像會繼承上面的click=click-1設定
                 // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
                 $('.cards').css('transform', 'translateX' + '(' + click * -950 + 'px)')
             })
@@ -306,7 +289,7 @@ $(window).resize(function () {
     else {
         // 否決結果1:設定:prev點選'回上1題'
         $('.arrow').eq(0).click(function () {
-            // ???這裡好像會繼承上面的t=t-1設定
+            // ???這裡好像會繼承上面的click=click-1設定
             // 否決結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
             $('.cards').css('transform', 'translateX' + '(' + click * -90 + 'vw)')
         })
@@ -317,7 +300,7 @@ $(window).resize(function () {
 // 設定:next點選'到下1題'
 // -------------------------
 $('.arrow').eq(1).click(function () {
-    // 預設:t=每按1次減少1頁
+    // 預設:click=每按1次減少1頁
     click = click + 1;
     // console.log( click , click )
 
@@ -354,7 +337,7 @@ $('.arrow').eq(1).click(function () {
     if (click > 0) {
         // 結果1-1:回上頁按鈕要出現
         $(this).prev().fadeIn(100).removeClass('invisible')
-        // 結果1-2:頁碼=按鈕移動次數+1(例如第1頁t=0,t+1=1)
+        // 結果1-2:頁碼=按鈕移動次數+1(例如第1頁click=0,click+1=1)
         $('.page').text(click + 1)
         // 條件2:位於第2頁以上時
         if (click >= 1) {
@@ -411,7 +394,7 @@ $('.arrow').eq(1).click(function () {
 if ($(window).width() >= 601) {
     // 結果1:設定:next點選'到下1題'
     $('.arrow').eq(1).click(function () {
-        // ???這裡好像會繼承上面的t=t-1設定
+        // ???這裡好像會繼承上面的click=click-1設定
         // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
         $('.cards').css('transform', 'translateX' + '(' + click * -540 + 'px)')
     })
@@ -419,7 +402,7 @@ if ($(window).width() >= 601) {
     if ($(window).width() >= 1057) {
         // 結果2:設定:next點選'到下1題'
         $('.arrow').eq(1).click(function () {
-            // ???這裡好像會繼承上面的t=t-1設定
+            // ???這裡好像會繼承上面的click=click-1設定
             // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
             $('.cards').css('transform', 'translateX' + '(' + click * -950 + 'px)')
         })
@@ -428,7 +411,7 @@ if ($(window).width() >= 601) {
 else {
     // 否決結果1:設定:prev點選'回上1題'
     $('.arrow').eq(1).click(function () {
-        // ???這裡好像會繼承上面的t=t-1設定
+        // ???這裡好像會繼承上面的click=click-1設定
         // 否決結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
         $('.cards').css('transform', 'translateX' + '(' + click * -90 + 'vw)')
     })
@@ -441,7 +424,7 @@ $(window).resize(function () {
     if ($(window).width() >= 601) {
         // 結果1:設定:next點選'到下1題'
         $('.arrow').eq(1).click(function () {
-            // ???這裡好像會繼承上面的t=t-1設定
+            // ???這裡好像會繼承上面的click=click-1設定
             // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
             $('.cards').css('transform', 'translateX' + '(' + click * -540 + 'px)')
         })
@@ -449,7 +432,7 @@ $(window).resize(function () {
         if ($(window).width() >= 1057) {
             // 結果2:設定:next點選'到下1題'
             $('.arrow').eq(1).click(function () {
-                // ???這裡好像會繼承上面的t=t-1設定
+                // ???這裡好像會繼承上面的click=click-1設定
                 // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
                 $('.cards').css('transform', 'translateX' + '(' + click * -950 + 'px)')
             })
@@ -458,20 +441,12 @@ $(window).resize(function () {
     else {
         // 否決結果1:設定:next點選'到下1題'
         $('.arrow').eq(1).click(function () {
-            // ???這裡好像會繼承上面的t=t-1設定
+            // ???這裡好像會繼承上面的click=click-1設定
             // 結果:卡片移動距離=點選按鈕移動次數x裡面個別card寬度
             $('.cards').css('transform', 'translateX' + '(' + click * -90 + 'vw)')
         })
     }
 })
-// 設定:回下一頁時清除cookie
-// --------------------------------------------------
-
-
-// window.addEventListener('pagehide', function () {
-//     alert("abc")
-//         // localStorage.removeItem('total_score')
-//     }
 
 
 
