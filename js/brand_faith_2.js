@@ -227,7 +227,6 @@ $('.answer').click(function () {
 let share_content = document.querySelector('.share_content');
 // let this_page = location.pathname !== '/';
 let this_page = location.href;
-console.log(location.href)
 // let notCategory = location.pathname.indexOf('category') === -1;
 // console.log(location.pathname.indexOf(2))
 // let notTag = location.pathname.indexOf('tag') === -1;
@@ -268,8 +267,8 @@ if (share_content
     // console.log(this_page_full_link)
 
     // 設定各個按鈕架構
-    let fb = '<div class="fb-like" data-href="' + this_page + '" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>';
-    let line = '<div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="' + this_page + '" data-color="default" data-size="small" data-count="true" style="display: none;"></div>';
+    let fb = '<div class="fb-like" data-url="' + 'https://pabi7913.github.io/brand_faith/brand_faith_0.html'+ '"data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>';
+    let line = '<div class="line-it-button" data-lang="zh_Hant" data-type="share-a" data-ver="3" data-url="' + 'https://pabi7913.github.io/brand_faith/brand_faith_0.html'+ '" data-color="default" data-size="small" data-count="true" style="display: none;"></div>';
     let twitter = '<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>';
 
     // 設定外包group
