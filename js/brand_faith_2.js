@@ -225,7 +225,7 @@ $('.answer').click(function () {
 // share
 // ----------------------------------------------
 let share_content = document.querySelector('.share_content');
-// let this_page = location.pathname !== '/';
+let this_page = location.pathname !== '/';
 console.log(location.pathname)
 // let notCategory = location.pathname.indexOf('category') === -1;
 // console.log(location.pathname.indexOf(2))
