@@ -1,6 +1,6 @@
 // 設定:尋找網址
 // --------------------------------------------------
-let url = location.search
+let url = location.hash
 console.log('url', url);
 
 // 設定:分數=網址最後2字
