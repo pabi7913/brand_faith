@@ -22,15 +22,19 @@ $('.option').click(function () {
     selected = $('.selected').length;
     console.log('selected', selected)
 
+    // 計算得分
+    score = $(this).data('score')*20
+    // console.log('score', score)
+
     // 計算selected,集滿5題更改complete連結
     // ---------------------
     if (selected != 5) {
-        $('.complete').removeAttr('onclick')
-    } else {
-        $('.complete').attr("onclick", "location='brand_faith_2.html'")
+        $('.complete').removeAttr('onchange')
     }
-    score = $(this).data('score')
-    // console.log('score', score)
+     else {
+        $('.complete').attr("onchange", "location='brand_faith_2.html#_0'")
+    }
+    
 })
 
 // 設定:計分加總
@@ -73,28 +77,28 @@ $('.complete').click(function () {
     sum = sum1 + sum2 + sum3 + sum4 + sum5
     console.log('sum', sum)
     if (selected != 5) {
-        // $('.complete').removeAttr('onclick')
+        // $('.complete').removeAttr('onchange')
         $('.popup_wrap').removeClass('d-none')
     } else {
-        // $('.complete').attr("onclick", "location.href='brand_faith_2.html'")
+        // $('.complete').attr("onchange", "location.href='brand_faith_2.html'")
         $('.popup_wrap').addClass('d-none')
     }
     // 改網址
     // --------------------------------------------------
     if (sum > -1) {
-        $('.complete').attr('onclick', "location='brand_faith_2#_0.html'");
+        $('.complete').attr('onchange', "location='brand_faith_2.html#_0'");
         if (sum > 0) {
-            $('.complete').attr('onclick', "location='brand_faith_2#20.html'");
+            $('.complete').attr('onchange', "location='brand_faith_2.html#20'");
             if (sum > 1) {
-                $('.complete').attr('onclick', "location='brand_faith_2#40.html'");
+                $('.complete').attr('onchange', "location='brand_faith_2.html#40'");
                 if (sum > 2) {
-                    $('.complete').attr('onclick', "location='brand_faith_2#60.html'");
+                    $('.complete').attr('onchange', "location='brand_faith_2.html#60'");
                     if (sum > 3) {
-                        $('.complete').attr('onclick', "location='brand_faith_2#80.html'");
+                        $('.complete').attr('onchange', "location='brand_faith_2.html#80'");
                         if (sum > 4) {
                             $('.complete').attr(
-                                'onclick',
-                                "location='brand_faith_2#100.html'"
+                                'onchange',
+                                "location='brand_faith_2.html#100'"
                             );
                         }
                     }
