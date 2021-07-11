@@ -20,23 +20,23 @@ $('.option').click(function () {
 
     // 設定:計算有幾個選項被選取
     selected = $('.selected').length;
-    console.log('selected', selected)
+    // console.log('selected', selected)
 
     // 計算得分
-    score = $(this).data('score')*20
+    score = $(this).data('score') * 20
     // console.log('score', score)
 
-    // 計算selected,集滿5題更改complete連結
+    // 計算selected,集滿5題觸發complete function計算得分
     // ---------------------
     if (selected != 5) {
         // $('.complete').removeAttr('onchange')
         $('.complete').off('clcik', countScore);
     }
-     else {
+    else {
         // $('.complete').attr("onclick", "location='brand_faith_2.html'")
         $('.complete').click(countScore);
     }
-    
+
 })
 
 // 設定:計分加總
@@ -72,13 +72,14 @@ $('.options').eq(4).children().click(function () {
     // console.log('sum5', sum5)
 })
 
-// complete按鈕觸發popup
+// function計算總分並導向各別結果
 // --------------------------------------------------
 // $('.complete').click(function () {
-    function countScore() {
+function countScore() {
+    // 計算總分
     selected = $('.selected').length;
     sum = sum1 + sum2 + sum3 + sum4 + sum5
-    console.log('sum', sum)
+    // console.log('sum', sum)
     if (selected != 5) {
         $('.popup_wrap').removeClass('d-none')
     } else {
@@ -86,6 +87,32 @@ $('.options').eq(4).children().click(function () {
     }
     // 改網址
     // --------------------------------------------------
+    switch (sum) {
+        // sum=0  
+        default:
+            location.href = 'brand_faith_2.html#_0';
+            break;
+        // sum=1
+        case 1:
+            location.href = 'brand_faith_2.html#20';
+            break;
+        // sum=2
+        case 2:
+            location.href = 'brand_faith_2.html#40';
+            break;
+        // sum=3  
+        case 3:
+            location.href = 'brand_faith_2.html#60';
+            break;
+        // sum=4
+        case 4:
+            location.href = 'brand_faith_2.html#80';
+            break;
+        // sum=5
+        case 5:
+            location.href = 'brand_faith_2.html#100';
+            break;
+    }
     // if (sum > -1) {
     //     $('.complete').attr('onchange', "location='brand_faith_2.html#_0'");
     //     if (sum > 0) {
@@ -107,32 +134,6 @@ $('.options').eq(4).children().click(function () {
     //         }
     //     }
     // }
-    switch (sum) {
-        // sum=5
-        case 5:
-          location.href = 'brand_faith_2.html#100';
-          break;
-        //   sum=4
-        case 4:
-          location.href = 'brand_faith_2.html#80';
-          break;
-        // sum=3  
-        case 3:
-          location.href = 'brand_faith_2.html#60';
-          break;
-        //   sum=2
-        case 2:
-          location.href = 'brand_faith_2.html#40';
-          break;
-        //   sum=1
-        case 1:
-          location.href = 'brand_faith_2.html#20';
-          break;
-        // sum=0  
-        default:
-            location.href = 'brand_faith_2.html#_0';
-          break;
-      }
 }
 // )
 
@@ -141,8 +142,6 @@ $('.options').eq(4).children().click(function () {
 $(".button:contains('了解')").click(function () {
     $('.popup_wrap').addClass('d-none')
 })
-
-
 
 // '上1題'和'下1題'的選項
 // --------------------------------------------------
