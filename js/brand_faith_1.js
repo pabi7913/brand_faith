@@ -29,10 +29,12 @@ $('.option').click(function () {
     // 計算selected,集滿5題更改complete連結
     // ---------------------
     if (selected != 5) {
-        $('.complete').removeAttr('onchange')
+        // $('.complete').removeAttr('onchange')
+        $('.complete').off('clcik', countScore);
     }
      else {
-        $('.complete').attr("onchange", "location='brand_faith_2.html#_0'")
+        // $('.complete').attr("onclick", "location='brand_faith_2.html'")
+        $('.complete').click(countScore);
     }
     
 })
@@ -72,55 +74,67 @@ $('.options').eq(4).children().click(function () {
 
 // complete按鈕觸發popup
 // --------------------------------------------------
-$('.complete').click(function () {
+// $('.complete').click(function () {
+    function countScore() {
     selected = $('.selected').length;
     sum = sum1 + sum2 + sum3 + sum4 + sum5
     console.log('sum', sum)
     if (selected != 5) {
-        // $('.complete').removeAttr('onchange')
         $('.popup_wrap').removeClass('d-none')
     } else {
-        // $('.complete').attr("onchange", "location.href='brand_faith_2.html'")
         $('.popup_wrap').addClass('d-none')
     }
     // 改網址
     // --------------------------------------------------
-    if (sum > -1) {
-        $('.complete').attr('onchange', "location='brand_faith_2.html#_0'");
-        if (sum > 0) {
-            $('.complete').attr('onchange', "location='brand_faith_2.html#20'");
-            if (sum > 1) {
-                $('.complete').attr('onchange', "location='brand_faith_2.html#40'");
-                if (sum > 2) {
-                    $('.complete').attr('onchange', "location='brand_faith_2.html#60'");
-                    if (sum > 3) {
-                        $('.complete').attr('onchange', "location='brand_faith_2.html#80'");
-                        if (sum > 4) {
-                            $('.complete').attr(
-                                'onchange',
-                                "location='brand_faith_2.html#100'"
-                            );
-                        }
-                    }
-                }
-            }
-        }
-    }
-})
-
-function total_score(link){
-// $('.complete').attr.location = link
-
-
-// $('.complete').000
-
+    // if (sum > -1) {
+    //     $('.complete').attr('onchange', "location='brand_faith_2.html#_0'");
+    //     if (sum > 0) {
+    //         $('.complete').attr('onchange', "location='brand_faith_2.html#20'");
+    //         if (sum > 1) {
+    //             $('.complete').attr('onchange', "location='brand_faith_2.html#40'");
+    //             if (sum > 2) {
+    //                 $('.complete').attr('onchange', "location='brand_faith_2.html#60'");
+    //                 if (sum > 3) {
+    //                     $('.complete').attr('onchange', "location='brand_faith_2.html#80'");
+    //                     if (sum > 4) {
+    //                         $('.complete').attr(
+    //                             'onchange',
+    //                             "location='brand_faith_2.html#100'"
+    //                         );
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    switch (sum) {
+        // sum=5
+        case 5:
+          location.href = 'brand_faith_2.html#100';
+          break;
+        //   sum=4
+        case 4:
+          location.href = 'brand_faith_2.html#80';
+          break;
+        // sum=3  
+        case 3:
+          location.href = 'brand_faith_2.html#60';
+          break;
+        //   sum=2
+        case 2:
+          location.href = 'brand_faith_2.html#40';
+          break;
+        //   sum=1
+        case 1:
+          location.href = 'brand_faith_2.html#20';
+          break;
+        // sum=0  
+        default:
+            location.href = 'brand_faith_2.html#_0';
+          break;
+      }
 }
-// total_score('brand_faith_2.html?_0')
-// total_score('brand_faith_2.html?20')
-// total_score('brand_faith_2.html?40')
-// total_score('brand_faith_2.html?60')
-// total_score('brand_faith_2.html?80')
-// total_score('brand_faith_2.html?100')
+// )
 
 // 設定:popup按'了解'關閉popup
 // --------------------------------------------------
