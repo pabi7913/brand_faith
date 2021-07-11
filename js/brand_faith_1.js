@@ -82,19 +82,19 @@ $('.complete').click(function () {
     // 改網址
     // --------------------------------------------------
     if (sum > -1) {
-        $('.complete').attr('onchange', "location='brand_faith_2.html#_0'");
+        $('.complete').attr('onclick', "location='brand_faith_2#_0.html'");
         if (sum > 0) {
-            $('.complete').attr('onchange', "location='brand_faith_2.html#20'");
+            $('.complete').attr('onclick', "location='brand_faith_2#20.html'");
             if (sum > 1) {
-                $('.complete').attr('onchange', "location='brand_faith_2.html#40'");
+                $('.complete').attr('onclick', "location='brand_faith_2#40.html'");
                 if (sum > 2) {
-                    $('.complete').attr('onchange', "location='brand_faith_2.html#60'");
+                    $('.complete').attr('onclick', "location='brand_faith_2#60.html'");
                     if (sum > 3) {
-                        $('.complete').attr('onchange', "location='brand_faith_2.html#80'");
+                        $('.complete').attr('onclick', "location='brand_faith_2#80.html'");
                         if (sum > 4) {
                             $('.complete').attr(
-                                'onchange',
-                                "location='brand_faith_2.html#100'"
+                                'onclick',
+                                "location='brand_faith_2#100.html'"
                             );
                         }
                     }
