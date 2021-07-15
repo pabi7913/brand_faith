@@ -74,17 +74,20 @@ $('.options').eq(4).children().click(function () {
 
 // function計算總分並導向各別結果
 // --------------------------------------------------
-// $('.complete').click(function () {
-function countScore() {
-    // 計算總分
+$('.complete').click(function () {
     selected = $('.selected').length;
-    sum = sum1 + sum2 + sum3 + sum4 + sum5
-    // console.log('sum', sum)
     if (selected != 5) {
         $('.popup_wrap').removeClass('d-none')
     } else {
         $('.popup_wrap').addClass('d-none')
     }
+})
+
+// $('.complete').click(function () {
+function countScore() {
+    // 計算總分
+    sum = sum1 + sum2 + sum3 + sum4 + sum5
+    // console.log('sum', sum)
     // 改網址
     // --------------------------------------------------
     switch (sum) {

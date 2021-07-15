@@ -321,7 +321,7 @@ height: 12.5vh;
 }
 @media (min-width: 1057px) {
     .two .title{
-        margin-bottom: 10vh;
+        margin-bottom: 5vh;
     }
 }
 /* ------------------------------- */
@@ -494,13 +494,17 @@ font-size: 1.5rem;
         }
 }
 /* ------------------------------- */
+.two .buttons{
+max-width: 600px;
+}
+
 .two .button{
     transform: translateY(0);
     margin-top: 3vh;
 }
 @media (min-width: 1057px) {
-    .two .title{
-        margin-bottom: 10vh;
+    .two .button{
+        margin-top: 5vh;
     }
 }
 /* ------------------------------- */
@@ -513,6 +517,11 @@ font-size: 1.5rem;
 }
 .two .answer:hover{
     color:var(--or);
+}
+@media (min-width: 1057px) {
+    .two .answer{
+        margin-bottom: 3rem;
+    }
 }
 /* ------------------------------- */
 .two .answers{
@@ -553,3 +562,98 @@ font-size: 1.5rem;
     padding: 0 5px;
     height: 22px;
   }
+  /* ------------------------------- */
+  .other_game_wrap{
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition:.1s
+  }
+  .two .other_game{
+width:50%;
+min-width:320px;
+max-width:600px;
+height:30vh;
+min-height:200px;
+top: 17vh;
+left:50%;
+transform: translateX(-50%);
+border-radius: 20px;
+z-index:999;
+background-color: rgba(255, 255, 255, 0.9);
+overflow: hidden;
+  }
+  .two .other_game .games{
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 25%,rgba(0, 0, 0, 1.0)35%, rgba(0, 0, 0, 1.0)65%,transparent 75%, transparent 100%);
+    height:200px;
+  }
+  @media (min-width: 1057px) {
+    .two .other_game .games{
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 5%,rgba(0, 0, 0, 1.0)35%, rgba(0, 0, 0, 1.0)65%,transparent 95%, transparent 100%);
+      }
+}
+
+  .two .other_game .games .game{
+      width: 10vw;
+      min-width:100px;
+      height:10vw;
+      min-height:100px;
+      margin: 10px;
+      border-radius: 20px;  
+      background-color: var(--bl);
+      /* filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .5)); */
+      /* border:.25px solid var(--bl); */
+  }
+
+  .two .other_game .games .game i{
+font-size:3.5rem; 
+color:var(--wh);
+}
+@media (min-width: 1057px) {
+    .two .other_game .games .game i{
+        font-size:5rem; 
+        }
+}
+
+  .two .other_game .game:hover{
+    filter: drop-shadow(0px 0px 5px rgba(50, 125, 215, 1));
+    transform: scale(1.05);
+  }
+
+  .two .other_game .closee{
+    z-index:999;
+    font-size: 1.75rem;
+    letter-spacing: .1rem;
+    color:var(--wh);
+    background-color: var(--re);
+    border:1px solid var(--re);
+    border-radius: 25px;
+    width:fit-content;
+    height:50px;
+    font-weight: 700;
+}
+.two .other_game .closee:hover{
+    background-color: transparent;
+    color:var(--re);
+}
+  /* ------------------------------- */
+.two .arrows{
+z-index:999;
+top:25%;
+}
+.two .arrows i{
+    color: var(--re);
+font-size: 5rem;
+transition: .2s;
+
+}
+.two .arrows i:hover{
+    filter: drop-shadow(0px 0px 5px rgba(250, 110, 125, 1));
+    transform: scale(1.05);
+}
+
+
+
+
