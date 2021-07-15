@@ -291,7 +291,7 @@ if (share_content
 
     // 設定外包group
     let share_buttons =
-        '<ul class="share_buttons">' +
+        '<ul class="share_buttons mx-auto">' +
         '<li>' + fb + '</li>' +
         '<li>' + line + '</li>' +
         '<li>' + twitter + '</li>' +
