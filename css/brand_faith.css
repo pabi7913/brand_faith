@@ -556,8 +556,15 @@ max-width: 600px;
     padding-left: 0;
     /* line-height: 1; */
     margin:0;
-    max-width:400px;
-    
+    /* max-width:350px; */
+    /* transform: scale(1.75); */
+  }
+
+  @media (min-width: 1057px) {
+    .two .share_buttons {
+        max-width:350px;
+        transform: scale(1.75);
+      }
   }
   .two .share_buttons li {
     padding: 0 5px;
