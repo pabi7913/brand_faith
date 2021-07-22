@@ -687,13 +687,14 @@ top:22.5%;
 .arrow:nth-of-type(2){
     right:3.5%;
 }
-.arrow:hover{
-    filter: drop-shadow(0px 0px 5px rgba(250, 110, 125, 1));
-    transform: scale(1.05);
-}
+
 @media (min-width: 1057px) {
     .arrow{
         top:26%;
+        }
+    .arrow:hover{
+            filter: drop-shadow(0px 0px 5px rgba(250, 110, 125, 1));
+            transform: scale(1.05);
         }
 }
 
