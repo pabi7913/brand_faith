@@ -316,7 +316,6 @@ $('.other').click(function () {
         .addClass('animate__bounceIn')
         .removeClass('time-05s')
         .removeClass('animate__fadeOut')
-
     $('.game').eq(0)
         .removeAttr('onclick')
         .unbind('mouseenter')
@@ -335,9 +334,10 @@ $('.other').click(function () {
         .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
             $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
         }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-        other_click= 0
-        console.log('open', other_click)
+    other_click = 0
+    console.log('open', other_click)
 })
+
 // 設定:按下次再說關閉視窗
 // --------------------------------------------------
 $('.closee').click(function () {
@@ -354,8 +354,9 @@ $('.closee').click(function () {
 
 // 箭頭slick
 // 1.
-// 條件1:視窗尺寸<1057
+// 條件1:視窗尺寸>=1001
 if ($(window).width() >= 1001) {
+    // other_click = 0
     // 設定:按左箭頭左移
     // --------------------------------------------------
     $('.arrow').eq(0).click(function () {
@@ -363,7 +364,7 @@ if ($(window).width() >= 1001) {
         if (other_click < -1) {
             other_click = 0
         }
-        console.log('game_click', other_click)
+        // console.log('left_click', other_click)
         $('.games').css('transform', 'translateX' + '(' + other_click * -11 + 'vw)')
         switch (other_click) {
             // 設定:預設中間2個可點選有效果
@@ -414,13 +415,12 @@ if ($(window).width() >= 1001) {
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
         }
-        
     })
     // 設定:按右箭頭右移
     // --------------------------------------------------
     $('.arrow').eq(1).click(function () {
         other_click = other_click + 1
-        console.log('game_click', other_click)
+        // console.log('right_click', other_click)
         $('.games').css('transform', 'translateX' + '(' + other_click * -11 + 'vw)')
 
         switch (other_click) {
@@ -476,9 +476,8 @@ if ($(window).width() >= 1001) {
             other_click = -1
         }
     })
-}
-// 設定:手機版移動
-else {
+} else {
+    // other_click = 0
     // 設定:按左箭頭左移
     // --------------------------------------------------
     $('.arrow').eq(0).click(function () {
@@ -486,7 +485,7 @@ else {
         if (other_click < -1) {
             other_click = 0
         }
-        console.log('game_click', other_click)
+        // console.log('left_click', other_click)
         $('.games').css('transform', 'translateX' + '(' + other_click * -120 + 'px)')
         switch (other_click) {
             // 設定:預設中間2個可點選有效果
@@ -542,7 +541,7 @@ else {
     // --------------------------------------------------
     $('.arrow').eq(1).click(function () {
         other_click = other_click + 1
-        console.log('game_click', other_click)
+        // console.log('right_click', other_click)
         $('.games').css('transform', 'translateX' + '(' + other_click * -120 + 'px)')
 
         switch (other_click) {
@@ -599,247 +598,49 @@ else {
         }
     })
 }
+
+// ???無法rwd，resize時無法slick
 // 2.
 // 設定:調整螢幕大小時
 $(window).resize(function () {
+    // 先歸0
+    other_click = 0
+    // $('.games').removeAttr('style')
+    console.log('to', other_click)
+    // $('.games').css('transform', 'translateX' + '(' + other_click + ')')
+
+    // ------------------------------
     if ($(window).width() >= 1001) {
-        // 設定:按左箭頭左移
-        // --------------------------------------------------
         $('.arrow').eq(0).click(function () {
             other_click = other_click - 1
-            if (other_click < -1) {
-                other_click = 0
-            }
-            console.log('game_click', other_click)
+            // if (other_click < -1) {
+            //     other_click = 0
+            // }
+            console.log('left_click', other_click)
             $('.games').css('transform', 'translateX' + '(' + other_click * -11 + 'vw)')
-            switch (other_click) {
-                // 設定:預設中間2個可點選有效果
-                case 0:
-                    // console.log('0')
-                    $('.game').eq(0)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(3)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(1)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(2)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-                case -1:
-                    // console.log('-1')
-                    $('.game').eq(2)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(3)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(0)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(1)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-            }
         })
-        // 設定:按右箭頭右移
-        // --------------------------------------------------
         $('.arrow').eq(1).click(function () {
             other_click = other_click + 1
-            console.log('game_click', other_click)
+            console.log('right_click', other_click)
             $('.games').css('transform', 'translateX' + '(' + other_click * -11 + 'vw)')
-
-            switch (other_click) {
-                // 設定:預設中間2個可點選有效果
-                case 0:
-                    // console.log('0')
-                    $('.game').eq(0)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(3)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(1)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(2)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-                case 1:
-                    // console.log('1')
-                    $('.game').eq(0)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(1)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(2)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(3)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-            }
             if (other_click > 0) {
                 other_click = -1
             }
-        })
+        }) 
     }
-    // 設定:手機版移動
     else {
-        // 設定:按左箭頭左移
-        // --------------------------------------------------
         $('.arrow').eq(0).click(function () {
             other_click = other_click - 1
             if (other_click < -1) {
                 other_click = 0
             }
-            console.log('game_click', other_click)
+            console.log('left_click', other_click)
             $('.games').css('transform', 'translateX' + '(' + other_click * -120 + 'px)')
-            switch (other_click) {
-                // 設定:預設中間2個可點選有效果
-                case 0:
-                    // console.log('0')
-                    $('.game').eq(0)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(3)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(1)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(2)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-                case -1:
-                    // console.log('-1')
-                    $('.game').eq(2)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(3)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(0)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(1)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-            }
         })
-        // 設定:按右箭頭右移
-        // --------------------------------------------------
         $('.arrow').eq(1).click(function () {
             other_click = other_click + 1
-            console.log('game_click', other_click)
+            console.log('right_click', other_click)
             $('.games').css('transform', 'translateX' + '(' + other_click * -120 + 'px)')
-
-            switch (other_click) {
-                // 設定:預設中間2個可點選有效果
-                case 0:
-                    // console.log('0')
-                    $('.game').eq(0)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(3)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(1)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(2)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-                case 1:
-                    // console.log('1')
-                    $('.game').eq(0)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(1)
-                        .removeAttr('onclick')
-                        .unbind('mouseenter')
-                        .unbind('mouseleave')
-                        .css('cursor', 'unset')
-
-                    $('.game').eq(2)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    $('.game').eq(3)
-                        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                    break;
-            }
             if (other_click > 0) {
                 other_click = -1
             }
