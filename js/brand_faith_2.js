@@ -310,6 +310,7 @@ if (share_content
 }
 // 設定:按玩別的跳出popup
 // --------------------------------------------------
+if ($(window).width() >= 1001) {
 $('.other').click(function () {
     $('.other_game_wrap')
         .removeClass('d-none')
@@ -337,6 +338,37 @@ $('.other').click(function () {
     other_click = 0
     console.log('open', other_click)
 })
+}else{
+    $('.other').click(function () {
+        $('.other_game_wrap')
+            .removeClass('d-none')
+            .addClass('animate__bounceIn')
+            .removeClass('time-05s')
+            .removeClass('animate__fadeOut')
+        $('.game').eq(0)
+            .removeAttr('onclick')
+            .unbind('mouseenter')
+            .unbind('mouseleave')
+            .css('cursor', 'unset')
+        $('.game').eq(3)
+            .removeAttr('onclick')
+            .unbind('mouseenter')
+            .unbind('mouseleave')
+            .css('cursor', 'unset')
+        $('.game').eq(1)
+            .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+            // .mouseenter(function () {
+            //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+            // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+        $('.game').eq(2)
+            .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+            // .mouseenter(function () {
+            //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+            // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+        other_click = 0
+        console.log('open', other_click)
+    })  
+}
 
 // 設定:按下次再說關閉視窗
 // --------------------------------------------------
@@ -504,13 +536,15 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
             case -1:
                 // console.log('-1')
@@ -527,13 +561,15 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(0)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
         }
     })
@@ -561,13 +597,15 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
             case 1:
                 // console.log('1')
@@ -584,13 +622,15 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(3)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    // .mouseenter(function () {
+                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
         }
         if (other_click > 0) {
