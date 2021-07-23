@@ -73,6 +73,18 @@
         }
     }
 /* ------------------------------------ */
+@keyframes logo_swing{
+	0%{
+        transform: translateX(-50%) rotate(15deg);
+	}
+	50%{
+        transform: translateX(-50%) rotate(-15deg);
+    }
+    100%{
+        transform: translateX(-50%) rotate(15deg);
+	}
+}
+/* ------------------------------------ */
 .light{
     animation-name: light;
     animation-duration:.25s;
@@ -564,4 +576,5 @@
 		transform: rotate(-135deg);
 	}
 }
+
 

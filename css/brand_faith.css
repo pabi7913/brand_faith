@@ -671,7 +671,7 @@ color:var(--wh);
     color:var(--re);
 }
   /* ------------------------------- */
-.arrow{
+.other_game .arrow{
 color: var(--re);
 font-size: 4rem;
 transition: .2s;
@@ -679,27 +679,107 @@ cursor: pointer;
 top:22.5%;
 }
 /* left */
-.arrow:nth-of-type(1){
+.other_game .arrow:nth-of-type(1){
     left:2.5%;
 }
 /* right */
-.arrow:nth-of-type(2){
+.other_game .arrow:nth-of-type(2){
     right:3.5%;
 }
 
 @media (min-width: 1057px) {
-    .arrow{
+    .other_game.arrow{
         top:26%;
         }
 
 }
 
 @media (min-width: 601px) {
-    .arrow:hover{
+    .other_game .arrow:hover{
         filter: drop-shadow(0px 0px 5px rgba(250, 110, 125, 1));
         transform: scale(1.05);
     }
 }
+  /* ------------------------------- */
+  .part{
+    color:white;
+    font-size: 2rem;
+}
+
+.cloth_t:before{
+    color: rgba(250, 110, 125,.6);
+    font-family: "Font Awesome 5 Free";
+    font-size: 5rem;
+    font-weight: 900;
+    position: absolute;
+    display: block;
+    top: -35%;
+    left:50%;
+    content: '\f8c0';
+    transform: translateX(-50%) rotate(15deg);
+    animation-name: logo_swing;
+    animation-duration:.75s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+.food_t:before{
+    color: rgba(250, 110, 125,.6);
+    font-family: "Font Awesome 5 Free";
+    font-size: 5rem;
+    font-weight: 900;
+    position: absolute;
+    display: block;
+    top: -35%;
+    left:50%;
+    content: '\f2e7';
+    transform: translateX(-50%) rotate(15deg);
+    animation-name: logo_swing;
+    animation-duration:.75s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+.drink_t:before{
+    color: rgba(250, 110, 125,.6);
+    font-family: "Font Awesome 5 Free";
+    font-size: 5rem;
+    font-weight: 900;
+    position: absolute;
+    display: block;
+    top: -35%;
+    left:50%;
+    content: '\f4e3';
+    transform: translateX(-50%) rotate(15deg);
+    animation-name: logo_swing;
+    animation-duration:.75s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+.car_t:before{
+    color: rgba(250, 110, 125,.6);
+    font-family: "Font Awesome 5 Free";
+    font-size: 5rem;
+    font-weight: 900;
+    position: absolute;
+    display: block;
+    top: -35%;
+    left:50%;
+    content: '\f1b9';
+    transform: translateX(-50%) rotate(15deg);
+    animation-name: logo_swing;
+    animation-duration:.75s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+
 
 
 
