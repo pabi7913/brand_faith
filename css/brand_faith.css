@@ -641,6 +641,7 @@ overflow: hidden;
       margin: 10px;
       border-radius: 20px;  
       background-color: var(--bl);
+      /* cursor: pointer; */
   }
  
   .other_game .games .game i{

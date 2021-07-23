@@ -215,7 +215,7 @@ $('.arrow').eq(0).click(function () {
         // 結果2-1-2:complete消失
         $(this).next().next().removeClass('d-flex').addClass('d-none')
         // 結果2-2:第4頁標題改成uber
-        $('.title').find('div').text('CONVERSE')
+        $('.title').find('div').text('Häagen-Dazs')
         // 結果2-3:頁碼=按鈕移動次數+1(例如第1頁click=0,click+1=1)
         $('.page').text(click + 1)
         // ----------
@@ -223,15 +223,15 @@ $('.arrow').eq(0).click(function () {
         // 條件3:回到第3頁和之前時
         if (click <= 2) {
             // 結果3:第3頁標題改成instagram
-            $('.title').find('div').text('adidas')
+            $('.title').find('div').text('baskin robbins')
             // 條件4:回到第2頁和之前時
             if (click <= 1) {
                 // 結果4:第2頁標題改成amazon
-                $('.title').find('div').text('FOREVER 21')
+                $('.title').find('div').text('DOUTOR')
                 // 條件5:回到第1頁和之前時
                 if (click <= 0) {
                     // 結果5:第1頁標題改成chrome
-                    $('.title').find('div').text('UNIQLO')
+                    $('.title').find('div').text('STARBUCKS')
                 }
             }
         }
@@ -299,7 +299,7 @@ $(window).resize(function () {
         // 結果0-3:頁碼為1
         $('.page').text('1')
         // 結果0-4:title修正為第一個
-        $('.title').find('div').text('UNIQLO')
+        $('.title').find('div').text('STARBUCKS')
     }
     // ---------------------
     // 條件1:視窗尺寸>=601
@@ -376,19 +376,19 @@ $('.arrow').eq(1).click(function () {
         // 條件2:位於第2頁以上時
         if (click >= 1) {
             // 結果2:第2頁標題改成amazon
-            $('.title').find('div').text('FOREVER 21')
+            $('.title').find('div').text('DOUTOR')
             // 條件3:位於第3頁以上時
             if (click >= 2) {
                 // 結果3:第3頁標題改成instagram
-                $('.title').find('div').text('adidas')
+                $('.title').find('div').text('baskin robbins')
                 // 條件4:位於第4頁以上時
                 if (click >= 3) {
                     // 結果4:第4頁標題改成uber
-                    $('.title').find('div').text('CONVERSE')
+                    $('.title').find('div').text('Häagen-Dazs')
                     // 條件5:位於第5頁以上時
                     if (click >= 4) {
                         // 結果5-1:第5頁標題改成uber
-                        $('.title').find('div').text('H & M')
+                        $('.title').find('div').text('pepsi')
                         // 結果5-2:頁碼為5
                         $('.page').text('5')
                         // 

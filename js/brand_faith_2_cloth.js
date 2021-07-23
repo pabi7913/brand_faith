@@ -328,11 +328,11 @@ $('.other').click(function () {
         .unbind('mouseleave')
         .css('cursor', 'unset')
     $('.game').eq(1)
-        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+        .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer').mouseenter(function () {
             $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
         }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
     $('.game').eq(2)
-        .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+        .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer').mouseenter(function () {
             $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
         }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
     other_click = 0
@@ -356,12 +356,12 @@ $('.other').click(function () {
             .unbind('mouseleave')
             .css('cursor', 'unset')
         $('.game').eq(1)
-            .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+            .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer')
             // .mouseenter(function () {
             //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
             // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
         $('.game').eq(2)
-            .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+            .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer')
             // .mouseenter(function () {
             //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
             // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
@@ -415,11 +415,11 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+                    .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer').mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+                    .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer').mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
@@ -442,7 +442,7 @@ if ($(window).width() >= 1001) {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+                    .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer').mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
@@ -472,11 +472,11 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+                    .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer').mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+                    .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer').mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
@@ -495,11 +495,11 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+                    .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer').mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(3)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer').mouseenter(function () {
+                    .attr('onclick', "location.href='brand_faith_0_car.html'").css('cursor', 'pointer').mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 break;
@@ -536,12 +536,12 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer')
                     // .mouseenter(function () {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer')
                     // .mouseenter(function () {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
@@ -566,7 +566,7 @@ if ($(window).width() >= 1001) {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer')
                     // .mouseenter(function () {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
@@ -597,12 +597,12 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    .attr('onclick', "location.href='brand_faith_0_food.html'").css('cursor', 'pointer')
                     // .mouseenter(function () {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer')
                     // .mouseenter(function () {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
@@ -622,12 +622,12 @@ if ($(window).width() >= 1001) {
                     .css('cursor', 'unset')
 
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    .attr('onclick', "location.href='brand_faith_0_drink.html'").css('cursor', 'pointer')
                     // .mouseenter(function () {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
                 $('.game').eq(3)
-                    .attr('onclick', "location.href='https://www.google.com.tw'").css('cursor', 'pointer')
+                    .attr('onclick', "location.href='brand_faith_0_car.html'").css('cursor', 'pointer')
                     // .mouseenter(function () {
                     //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
