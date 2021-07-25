@@ -941,7 +941,7 @@ cursor: pointer;
         right:3.5%;
 }}
 
-@media (min-width: 601px) {
+@media (min-width: 1057px) {
     .other_game .arrow:hover{
         filter: drop-shadow(0px 0px 5px rgba(250, 110, 125, 1));
         transform: scale(1.05);
