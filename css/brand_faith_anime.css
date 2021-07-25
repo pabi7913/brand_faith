@@ -34,6 +34,17 @@
             transform: translateY(150px);
         }
     }
+    @keyframes fadeup_jp{
+        /* 0%{
+            opacity: 0;
+            transform: translateY(300px);
+        }
+    
+        100%{
+            opacity: 1;
+            transform: translateY(90px);
+        } */
+    }
 /* ------------------------------------ */  
 .biger{
     animation-name: biger;

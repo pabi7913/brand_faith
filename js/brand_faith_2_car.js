@@ -197,7 +197,7 @@ $('.answer').click(function () {
             $('.answer_card')
                 .addClass('answer_card_width')
                 .removeClass('animate__flipOutY').addClass('animate__flipInY')
-            $('.answer_card img').attr('src', 'img/amazon-2.png')
+            $('.answer_card img').attr('src', 'img/car/car_tesla-2.png')
         }, 400)
         if (click > 1) {
             $('.answer_card').addClass('animate__flipOutY')
@@ -206,7 +206,7 @@ $('.answer').click(function () {
                 $('.answer_card')
                     .removeClass('answer_card_width')
                     .removeClass('animate__flipOutY').addClass('animate__flipInY')
-                $('.answer_card img').attr('src', 'img/instagram-3.png')
+                $('.answer_card img').attr('src', 'img/car/car_porsche-3.png')
             }, 400)
             if (click > 2) {
                 $('.answer_card').addClass('animate__flipOutY')
@@ -215,7 +215,7 @@ $('.answer').click(function () {
                     $('.answer_card')
                         .addClass('answer_card_width')
                         .removeClass('animate__flipOutY').addClass('animate__flipInY')
-                    $('.answer_card img').attr('src', 'img/uber-4.png')
+                    $('.answer_card img').attr('src', 'img/car/car_mini-4.png')
                 }, 400)
                 if (click > 3) {
                     $('.answer_card').addClass('animate__flipOutY')
@@ -224,7 +224,7 @@ $('.answer').click(function () {
                         $('.answer_card')
                             .removeClass('answer_card_width')
                             .removeClass('animate__flipOutY').addClass('animate__flipInY')
-                        $('.answer_card img').attr('src', 'img/apple-1.png')
+                        $('.answer_card img').attr('src', 'img/car/car_volkswagen-1.png')
                     }, 400)
                 }
                 if (click > 4) {
@@ -235,7 +235,7 @@ $('.answer').click(function () {
                         $('.answers').addClass('d-none')
                         $('.answer_card')
                             .removeClass('animate__flipOutY').addClass('animate__flipInY')
-                        $('.answer_card img').attr('src', 'img/chrome-1.png')
+                        $('.answer_card img').attr('src', 'img/car/car_bmw-1.png')
                     }, 400)
                 }
             }
@@ -311,34 +311,6 @@ if (share_content
 // 設定:按玩別的跳出popup
 // --------------------------------------------------
 if ($(window).width() >= 1001) {
-$('.other').click(function () {
-    $('.other_game_wrap')
-        .removeClass('d-none')
-        .addClass('animate__bounceIn')
-        .removeClass('time-05s')
-        .removeClass('animate__fadeOut')
-    $('.game').eq(0)
-        .removeAttr('onclick')
-        .unbind('mouseenter')
-        .unbind('mouseleave')
-        .css('cursor', 'unset')
-    $('.game').eq(3)
-        .removeAttr('onclick')
-        .unbind('mouseenter')
-        .unbind('mouseleave')
-        .css('cursor', 'unset')
-    $('.game').eq(1)
-        .attr('onclick', "location.href='brand_faith_0_cloth.html'").css('cursor', 'pointer').mouseenter(function () {
-            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-    $('.game').eq(2)
-        .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer').mouseenter(function () {
-            $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-        }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-    other_click = 0
-    console.log('open', other_click)
-})
-}else{
     $('.other').click(function () {
         $('.other_game_wrap')
             .removeClass('d-none')
@@ -346,28 +318,69 @@ $('.other').click(function () {
             .removeClass('time-05s')
             .removeClass('animate__fadeOut')
         $('.game').eq(0)
-            .removeAttr('onclick')
+            .unbind('click')
             .unbind('mouseenter')
             .unbind('mouseleave')
             .css('cursor', 'unset')
         $('.game').eq(3)
-            .removeAttr('onclick')
+            .unbind('click')
+            .unbind('mouseenter')
+            .unbind('mouseleave')
+            .css('cursor', 'unset')
+
+        $('.game').eq(1)
+            .css('cursor', 'pointer').click(function () {
+                window.open('brand_faith_0_cloth.html', '_blank');
+            })
+            .mouseenter(function () {
+                $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+            })
+            .mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+
+        $('.game').eq(2)
+            .css('cursor', 'pointer')
+            .click(function () {
+                window.open('brand_faith_0_food.html', '_blank');
+            })
+            .mouseenter(function () {
+                $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
+            })
+            .mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+
+        other_click = 0
+        console.log('open', other_click)
+    })
+} else {
+    $('.other').click(function () {
+        $('.other_game_wrap')
+            .removeClass('d-none')
+            .addClass('animate__bounceIn')
+            .removeClass('time-05s')
+            .removeClass('animate__fadeOut')
+        $('.game').eq(0)
+            .unbind('click')
+            .unbind('mouseenter')
+            .unbind('mouseleave')
+            .css('cursor', 'unset')
+        $('.game').eq(3)
+            .unbind('click')
             .unbind('mouseenter')
             .unbind('mouseleave')
             .css('cursor', 'unset')
         $('.game').eq(1)
-            .attr('onclick', "location.href='brand_faith_cloth.html'").css('cursor', 'pointer')
-            // .mouseenter(function () {
-            //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-            // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            .css('cursor', 'pointer')
+            .click(function () {
+                window.open('brand_faith_0_cloth.html', '_blank');
+            })
+
         $('.game').eq(2)
-            .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer')
-            // .mouseenter(function () {
-            //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-            // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            .css('cursor', 'pointer').click(function () {
+                window.open('brand_faith_0_food.html', '_blank');
+            })
+
         other_click = 0
         console.log('open', other_click)
-    })  
+    })
 }
 
 // 設定:按下次再說關閉視窗
@@ -403,48 +416,64 @@ if ($(window).width() >= 1001) {
             case 0:
                 // console.log('0')
                 $('.game').eq(0)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(3)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .attr('onclick', "location.href='brand_faith_cloth.html'").css('cursor', 'pointer').mouseenter(function () {
+                    .css('cursor', 'pointer').click(function () {
+                        window.open('brand_faith_0_cloth.html', '_blank');
+                    }).mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+
                 $('.game').eq(2)
-                    .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer').mouseenter(function () {
+                    .css('cursor', 'pointer')
+                    .click(function () {
+                        window.open('brand_faith_0_food.html', '_blank');
+                    })
+                    .mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    })
+                    .mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+
                 break;
             case -1:
                 // console.log('-1')
                 $('.game').eq(2)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(3)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
-                $('.game').eq(0)
-                    .attr('onclick', "location.href='brand_faith_0.html'").css('cursor', 'pointer').mouseenter(function () {
+                    $('.game').eq(0)
+                    .css('cursor','pointer').click(function () {
+                        window.open('brand_faith_0.html', '_blank');
+                    }).mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                $('.game').eq(1)
-                    .attr('onclick', "location.href='brand_faith_cloth.html'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            
+                    $('.game').eq(1)
+                    .css('cursor','pointer')
+                    .click(function () {
+                        window.open('brand_faith_0_cloth.html', '_blank');})
+                    .mouseenter(function () {
+                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')})
+                    .mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            
                 break;
         }
     })
@@ -460,48 +489,62 @@ if ($(window).width() >= 1001) {
             case 0:
                 // console.log('0')
                 $('.game').eq(0)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(3)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
-                $('.game').eq(1)
-                    .attr('onclick', "location.href='brand_faith_cloth.html'").css('cursor', 'pointer').mouseenter(function () {
+                    $('.game').eq(1)
+                    .css('cursor','pointer').click(function () {
+                        window.open('brand_faith_0_cloth.html', '_blank');
+                    }).mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                $('.game').eq(2)
-                    .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            
+                    $('.game').eq(2)
+                    .css('cursor','pointer')
+                    .click(function () {
+                        window.open('brand_faith_0_food.html', '_blank');})
+                    .mouseenter(function () {
+                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')})
+                    .mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            
                 break;
             case 1:
                 // console.log('1')
                 $('.game').eq(0)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
-                $('.game').eq(2)
-                    .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer').mouseenter(function () {
+                    $('.game').eq(2)
+                    .css('cursor','pointer').click(function () {
+                        window.open('brand_faith_0_food.html', '_blank');
+                    }).mouseenter(function () {
                         $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
                     }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                $('.game').eq(3)
-                    .attr('onclick', "location.href='brand_faith_drink.html'").css('cursor', 'pointer').mouseenter(function () {
-                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            
+                    $('.game').eq(3)
+                    .css('cursor','pointer')
+                    .click(function () {
+                        window.open('brand_faith_0_drink.html', '_blank');})
+                    .mouseenter(function () {
+                        $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')})
+                    .mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+            
                 break;
         }
         if (other_click > 0) {
@@ -524,52 +567,48 @@ if ($(window).width() >= 1001) {
             case 0:
                 // console.log('0')
                 $('.game').eq(0)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(3)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
-                $('.game').eq(1)
-                    .attr('onclick', "location.href='brand_faith_cloth.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                $('.game').eq(2)
-                    .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    $('.game').eq(1)
+                    .css('cursor','pointer')
+                    .click(function () {
+                        window.open('brand_faith_0_cloth.html', '_blank');})
+            
+                    $('.game').eq(2)
+                    .css('cursor','pointer').click(function () {
+                        window.open('brand_faith_0_food.html', '_blank');})
                 break;
             case -1:
                 // console.log('-1')
                 $('.game').eq(2)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(3)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
-                $('.game').eq(0)
-                    .attr('onclick', "location.href='brand_faith_0.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                $('.game').eq(1)
-                    .attr('onclick', "location.href='brand_faith_cloth.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    $('.game').eq(0)
+                    .css('cursor','pointer')
+                    .click(function () {
+                        window.open('brand_faith_0.html', '_blank');})
+            
+                    $('.game').eq(1)
+                    .css('cursor','pointer').click(function () {
+                        window.open('brand_faith_0_cloth.html', '_blank');})
                 break;
         }
     })
@@ -585,52 +624,48 @@ if ($(window).width() >= 1001) {
             case 0:
                 // console.log('0')
                 $('.game').eq(0)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(3)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
-                $('.game').eq(1)
-                    .attr('onclick', "location.href='brand_faith_cloth.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                $('.game').eq(2)
-                    .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    $('.game').eq(1)
+                    .css('cursor','pointer')
+                    .click(function () {
+                        window.open('brand_faith_0_cloth.html', '_blank');})
+            
+                    $('.game').eq(2)
+                    .css('cursor','pointer').click(function () {
+                        window.open('brand_faith_0_food.html', '_blank');})
                 break;
             case 1:
                 // console.log('1')
                 $('.game').eq(0)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
                 $('.game').eq(1)
-                    .removeAttr('onclick')
+                    .unbind('click')
                     .unbind('mouseenter')
                     .unbind('mouseleave')
                     .css('cursor', 'unset')
 
-                $('.game').eq(2)
-                    .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
-                $('.game').eq(3)
-                    .attr('onclick', "location.href='brand_faith_food.html'").css('cursor', 'pointer')
-                    // .mouseenter(function () {
-                    //     $(this).css('filter', 'drop-shadow(0px 0px 5px rgba(50, 125, 215, 1))').css('transform', 'scale(1.05)')
-                    // }).mouseleave(function () { $(this).css('filter', 'unset').css('transform', 'scale(1)') })
+                    $('.game').eq(2)
+                    .css('cursor','pointer')
+                    .click(function () {
+                        window.open('brand_faith_0_food.html', '_blank');})
+            
+                    $('.game').eq(3)
+                    .css('cursor','pointer').click(function () {
+                        window.open('brand_faith_0_drink.html', '_blank');})
                 break;
         }
         if (other_click > 0) {
@@ -666,7 +701,7 @@ $(window).resize(function () {
             if (other_click > 0) {
                 other_click = -1
             }
-        }) 
+        })
     }
     else {
         $('.arrow').eq(0).click(function () {
