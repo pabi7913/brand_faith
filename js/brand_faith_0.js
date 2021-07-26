@@ -46,16 +46,21 @@ $('.en').click(function () {
 if ($(window).width() >= 601) {
 $('.jp').click(function () {
     location.hash = 'jp'
+    
     $('.title').eq(0)
     .text('ロゴマーク')
     .addClass('fadein delay05')
     .css('font-weight','700')
+
     $('.title').eq(1).children().eq(0)
     .html('ちゃんと覚えてる？')
     .addClass('fadein delay075')
+    .css('font-weight','700')
+
     $('.title').eq(1).children().eq(1)
     .addClass('line delay10')
     .css('margin-top','10px')
+
     $('.title').eq(2)
     .text('スタート')
     .addClass('fadeup delay10')
@@ -68,15 +73,15 @@ $('.jp').click(function () {
     .addClass('fadein delay05')
     .css('font-weight','700')
     $('.title').eq(1).children().eq(0)
-    .html('ちゃんと<br>覚えてる？')
+    .text('ちゃんと覚えてる？')
     .addClass('fadein delay075')
     .css('white-space','unset')
-    .css('font-size','2.75rem')
-    .css('line-height','1.25')
     .css('font-weight','700')
+
     $('.title').eq(1).children().eq(1)
     .addClass('line delay10')
-    .css('margin-top','15px')
+    .css('margin-top','10px')
+
     $('.title').eq(2)
     .text('スタート')
     .addClass('fadeup delay10')

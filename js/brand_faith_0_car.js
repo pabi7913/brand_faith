@@ -58,7 +58,7 @@ switch(language){
             $('.title').eq(1).children().eq(0)
             .text('ちゃんと覚えてる？')
             .css('white-space','unset')
-            .css('line-height','1.25')
+        
             .css('font-weight','700')
 
             $('.title').eq(1).children().eq(1)
@@ -79,7 +79,7 @@ switch(language){
                 $('.title').eq(1).children().eq(0)
                 .text('ちゃんと覚えてる？')
                 .css('white-space','unset')
-                .css('line-height','1.25')
+            
                 .css('font-weight','700')
 
                 $('.title').eq(1).children().eq(1)
