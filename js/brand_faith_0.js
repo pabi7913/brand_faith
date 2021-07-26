@@ -46,7 +46,7 @@ $('.en').click(function () {
 if ($(window).width() >= 601) {
 $('.jp').click(function () {
     location.hash = 'jp'
-    
+
     $('.title').eq(0)
     .text('ロゴマーク')
     .addClass('fadein delay05')
@@ -91,7 +91,7 @@ $('.jp').click(function () {
 // 設定：將語系存入暫存
 // --------------------------------------------------
 localStorage.
-setItem('selected_langunage', location.hash.substr(1, 2))
+setItem('selected_language', location.hash.substr(1, 2))
 
 // 設定：滑鼠移到語言時logo動畫
 // --------------------------------------------------
@@ -111,7 +111,7 @@ $('.button').click(function () {
     $('.select_language')
         .removeClass('animate__bounceIn')
         .addClass('animate__zoomOut')
-        localStorage.setItem('selected_langunage', location.hash.substr(1, 2))
+        localStorage.setItem('selected_language', location.hash.substr(1, 2))
     setTimeout(function () {
         $('.select_language').addClass('d-none')
     }, 1000)
