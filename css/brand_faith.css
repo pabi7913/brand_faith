@@ -112,7 +112,7 @@ transform: translateX(-50%);
 .select_language {
     z-index: 999;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.75);
     transition:.1s;
     -webkit-ackdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
