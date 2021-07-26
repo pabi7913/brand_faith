@@ -75,6 +75,7 @@ section{
     border:1px solid var(--bl);
     border-radius: 50px;
     width:fit-content;
+    
     transform: translateY(150px);
     cursor: pointer;
     }
@@ -95,6 +96,17 @@ transform: translateX(-50%);
         top:35vh;
         width:50%;
         }
+}
+.zero .button{
+    width:80%;
+}
+.zero .title{
+    font-size:2rem
+}
+@media (min-width: 601px) {
+.zero .title{
+    font-size:2.75rem
+}
 }
 
 .select_language {
@@ -948,7 +960,13 @@ cursor: pointer;
   /* ------------------------------- */
   .part{
     color:white;
-    font-size: 2rem;
+    font-size: 1.75rem;
+    font-weight:500;
+}
+@media (min-width: 601px) {
+    .part{
+        font-size: 2.5rem;
+    }
 }
 
 .cloth_t:before{
@@ -958,7 +976,7 @@ cursor: pointer;
     font-weight: 900;
     position: absolute;
     display: block;
-    top: -35%;
+    top: -52.5%;
     left:50%;
     content: '\f8c0';
     transform: translateX(-50%) rotate(15deg);
@@ -976,7 +994,7 @@ cursor: pointer;
     font-weight: 900;
     position: absolute;
     display: block;
-    top: -35%;
+    top: -52.5%;
     left:50%;
     content: '\f2e7';
     transform: translateX(-50%) rotate(15deg);
@@ -994,7 +1012,7 @@ cursor: pointer;
     font-weight: 900;
     position: absolute;
     display: block;
-    top: -35%;
+    top: -52.5%;
     left:50%;
     content: '\f4e3';
     transform: translateX(-50%) rotate(15deg);
@@ -1012,7 +1030,7 @@ cursor: pointer;
     font-weight: 900;
     position: absolute;
     display: block;
-    top: -35%;
+    top: -52.5%;
     left:50%;
     content: '\f1b9';
     transform: translateX(-50%) rotate(15deg);
@@ -1022,6 +1040,21 @@ cursor: pointer;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
+}
+
+@media (min-width: 601px) {
+    .cloth_t:before{
+        top: -37.5%;
+    }
+    .food_t:before{
+        top: -37.5%;
+    }
+    .drink_t:before{
+        top: -37.5%;
+    }
+    .car_t:before{
+        top: -37.5%;
+    }
 }
 
 
