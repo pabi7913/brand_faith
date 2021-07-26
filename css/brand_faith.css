@@ -372,7 +372,7 @@ height: 12.5vh;
     transition:.1s
 }
 .one .popup{
-    width:60%;
+    width:70%;
     max-width:400px;
     height:37.5vh;
     max-height: 325px;
@@ -402,8 +402,9 @@ height: 12.5vh;
     background-color: var(--re);
     border:1px solid var(--re);
     border-radius: 50px;
-    width:fit-content;
+    width:60%;
     transform: translateY(0);
+    text-align: center;
 }
 
 .one .popup .button:hover{
