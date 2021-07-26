@@ -23,9 +23,6 @@ font-family: custom-serif
     transform: translateY(90px);
 }
 
-
-
-
 :root {
     --bl: rgb(50, 125, 215);
     --wh: #fff;
@@ -43,7 +40,6 @@ font-family: custom-serif
 padding: 0;
 margin:0;
 }
-
 
 section{
     width:100vw;
@@ -82,6 +78,7 @@ section{
     transform: translateY(150px);
     cursor: pointer;
     }
+
 .button:hover{
     background-color: transparent;
     }
@@ -107,6 +104,7 @@ transform: translateX(-50%);
     top: 0;
     background-color: rgba(0, 0, 0, 0.4);
     transition:.1s;
+    -webkit-ackdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 
 }
